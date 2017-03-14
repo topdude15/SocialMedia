@@ -11,6 +11,8 @@ target 'SocialMedia' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit'
+  pod 'SwiftKeychainWrapper'
 
   target 'SocialMediaTests' do
     inherit! :search_paths

@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
     
@@ -21,11 +22,13 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
     }
+    
     @IBAction func facebookBtnTapped(_ sender: Any) {
         
         let facebookLogin = FBSDKLoginManager()
@@ -51,6 +54,9 @@ class SignInVC: UIViewController {
             }
             else {
                 print("TREVOR: Successfully authenticated with Firebase")
+                if let user = user {
+                    self.completeSignIn(id: user.uid)
+                }
             }
         })
     }
@@ -66,12 +72,20 @@ class SignInVC: UIViewController {
                             print("TREVOR: Unable to authenticate email user with Firebase")
                         } else {
                             print("TREVOR: Successfully authenticated email user with Firebase")
+                            if let user = user {
+                            self.completeSignIn(id: user.uid)
+                                
+                            }
                         }
                     })
                 }
             })
         }
     }
-
+    func completeSignIn(id: String) {
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("TREVOR: Data saved to keychain \(keychainResult)")
+        performSegue(withIdentifier: "goToFeed", sender: nil)
+    }
 }
 

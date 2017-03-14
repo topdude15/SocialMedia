@@ -24,12 +24,133 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialMedia/SignInVC.swift"
-            timestampString = "511138014.833841"
+            timestampString = "511181931.793129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "firebaseAuth(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMedia/SignInVC.swift"
+            timestampString = "511147161.35156"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.SignInVC.__deallocating_deinit"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
+                  timestampString = "511181939.027564"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.SignInVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SocialMedia.SignInVC"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
+                  timestampString = "511181939.029539"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.SignInVC.__allocating_init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SocialMedia.SignInVC"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
+                  timestampString = "511181939.031286"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.SignInVC.__allocating_init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SocialMedia.SignInVC&gt;"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
+                  timestampString = "511181939.033205"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.SignInVC.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;SocialMedia.SignInVC&gt;"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
+                  timestampString = "511181939.034922"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMedia/SignInVC.swift"
+            timestampString = "511147888.617565"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMedia/SignInVC.swift"
+            timestampString = "511181931.793129"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "signInTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
