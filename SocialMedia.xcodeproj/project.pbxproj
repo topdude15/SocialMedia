@@ -10,6 +10,7 @@
 		8E94AA383C2E8DE6A299669F /* Pods_SocialMediaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65B2A88A52022A4CEB3AE23 /* Pods_SocialMediaUITests.framework */; };
 		CF03BB8B1E7892A600384D0C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF03BB8A1E7892A600384D0C /* CircleView.swift */; };
 		CF0C25AE1E795EE200607BAA /* CircleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C25AD1E795EE200607BAA /* CircleBtn.swift */; };
+		CF0C25B01E79623000607BAA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C25AF1E79623000607BAA /* PostCell.swift */; };
 		CF19D0FF1E75C9BD00003FB2 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D0FE1E75C9BD00003FB2 /* FancyView.swift */; };
 		CF19D1021E75CA5400003FB2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1011E75CA5400003FB2 /* Constants.swift */; };
 		CF19D1041E75CD0800003FB2 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1031E75CD0700003FB2 /* RoundButton.swift */; };
@@ -56,6 +57,7 @@
 		C65B2A88A52022A4CEB3AE23 /* Pods_SocialMediaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialMediaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF03BB8A1E7892A600384D0C /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		CF0C25AD1E795EE200607BAA /* CircleBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBtn.swift; sourceTree = "<group>"; };
+		CF0C25AF1E79623000607BAA /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		CF19D0FE1E75C9BD00003FB2 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
 		CF19D1011E75CA5400003FB2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CF19D1031E75CD0700003FB2 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				CF19D1071E75D39800003FB2 /* FancyButton.swift */,
 				CF03BB8A1E7892A600384D0C /* CircleView.swift */,
 				CF0C25AD1E795EE200607BAA /* CircleBtn.swift */,
+				CF0C25AF1E79623000607BAA /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -524,6 +527,7 @@
 				CF19D1081E75D39800003FB2 /* FancyButton.swift in Sources */,
 				CF2F1F061E780278006EE222 /* FeedVC.swift in Sources */,
 				CF41E57A1E7432DA0045CEB6 /* AppDelegate.swift in Sources */,
+				CF0C25B01E79623000607BAA /* PostCell.swift in Sources */,
 				CF19D0FF1E75C9BD00003FB2 /* FancyView.swift in Sources */,
 				CF19D1021E75CA5400003FB2 /* Constants.swift in Sources */,
 			);

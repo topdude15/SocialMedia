@@ -54,27 +54,12 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
-                  timestampString = "511270872.751075"
+                  timestampString = "511284301.053506"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SocialMedia.SignInVC.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SocialMedia.SignInVC"
-                  moduleName = "SocialMedia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
-                  timestampString = "511270872.752963"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -84,12 +69,12 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
-                  timestampString = "511270872.754878"
+                  timestampString = "511284301.058406"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
+                  offsetFromSymbolStart = "23">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -99,12 +84,12 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
-                  timestampString = "511270872.756574"
+                  timestampString = "511284301.060978"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "4">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -114,12 +99,12 @@
                   moduleName = "SocialMedia"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/SignInVC.swift"
-                  timestampString = "511270872.758257"
+                  timestampString = "511284301.063116"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "36">
+                  offsetFromSymbolStart = "31">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -152,6 +137,69 @@
             endingLineNumber = "74"
             landmarkName = "signInTapped(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SocialMedia/PostCell.swift"
+            timestampString = "511282728.625577"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "PostCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.PostCell.profileImg.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/PostCell.swift"
+                  timestampString = "511284301.070743"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.PostCell.profileImg.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIImageView&gt;"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/PostCell.swift"
+                  timestampString = "511284301.072463"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SocialMedia.PostCell.init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; SocialMedia.PostCell"
+                  moduleName = "SocialMedia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/trevorrose/Desktop/SocialMedia/SocialMedia/PostCell.swift"
+                  timestampString = "511284301.07417"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "70">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
