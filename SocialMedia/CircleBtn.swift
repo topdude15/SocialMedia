@@ -1,15 +1,15 @@
 //
-//  FancyView.swift
+//  CircleBtn.swift
 //  SocialMedia
 //
-//  Created by Trevor Rose on 3/12/17.
+//  Created by Trevor Rose on 3/15/17.
 //  Copyright © 2017 Trevor Rose. All rights reserved.
 //
 
 import UIKit
 
-class FancyView: UIView {
-    
+class CircleBtn: UIButton {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -17,6 +17,6 @@ class FancyView: UIView {
         layer.shadowOpacity = 0.8
         layer.shadowRadius = 5.0
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        layer.cornerRadius = 2
+        layer.cornerRadius = self.frame.width / 2
     }
 }
