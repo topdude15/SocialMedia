@@ -79,7 +79,7 @@ class SignInVC: UIViewController {
                             print("TREVOR: Successfully authenticated email user with Firebase")
                             if let user = user {
                             let userData = ["provider": user.providerID]
-                            self.completeSignIn(id: user.uid, userData: userData)
+                                self.completeSignIn(id: user.uid, userData: userData)
                                 
                             }
                         }
