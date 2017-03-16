@@ -9,7 +9,8 @@
 import UIKit
 
 class PostCell: UITableViewCell {
-    @IBOutlet weak var profileImg: UIImageView!
+    
+    @IBOutlet weak var profileImg: CircleView!
     @IBOutlet weak var usernameLabe: UILabel!
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var caption: UITextView!

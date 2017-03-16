@@ -127,7 +127,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailField" destination="OAi-Y6-WV3" id="JQ7-SV-N0K"/>
+                        <outlet property="emailField" destination="OAi-Y6-WV3" id="U6G-lC-rrF"/>
                         <outlet property="pwdField" destination="RHE-mv-gt1" id="Jzt-pp-aml"/>
                         <segue destination="oFx-xv-9Fr" kind="show" identifier="goToFeed" id="ALw-Y8-RGx"/>
                     </connections>
@@ -330,7 +330,7 @@
                                             <outlet property="caption" destination="dAl-R8-fn4" id="zfZ-nx-jVE"/>
                                             <outlet property="likesLabel" destination="NiM-r2-Kbf" id="3Tc-Gt-AW6"/>
                                             <outlet property="postImg" destination="6fB-t8-JxS" id="Toy-vj-674"/>
-                                            <outlet property="profileImg" destination="WX9-sW-dPX" id="ivr-6D-1i3"/>
+                                            <outlet property="profileImg" destination="WX9-sW-dPX" id="0Bk-Dq-Nho"/>
                                             <outlet property="usernameLabe" destination="ROV-Ie-uLL" id="aSR-LV-34n"/>
                                         </connections>
                                     </tableViewCell>

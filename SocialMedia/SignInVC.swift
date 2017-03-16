@@ -14,7 +14,6 @@ import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
     
-    
     @IBOutlet weak var emailField: FancyField!
     @IBOutlet weak var pwdField: FancyField!
 
