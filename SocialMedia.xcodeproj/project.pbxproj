@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E94AA383C2E8DE6A299669F /* Pods_SocialMediaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C65B2A88A52022A4CEB3AE23 /* Pods_SocialMediaUITests.framework */; };
 		CF03BB8B1E7892A600384D0C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF03BB8A1E7892A600384D0C /* CircleView.swift */; };
+		CF08D23D1E7A0B1D00075FE6 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF08D23C1E7A0B1D00075FE6 /* DataService.swift */; };
 		CF0C25AE1E795EE200607BAA /* CircleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C25AD1E795EE200607BAA /* CircleBtn.swift */; };
 		CF0C25B01E79623000607BAA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0C25AF1E79623000607BAA /* PostCell.swift */; };
 		CF19D0FF1E75C9BD00003FB2 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D0FE1E75C9BD00003FB2 /* FancyView.swift */; };
@@ -56,6 +57,7 @@
 		9984F434008454294212575D /* Pods-SocialMediaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMediaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMediaUITests/Pods-SocialMediaUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C65B2A88A52022A4CEB3AE23 /* Pods_SocialMediaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialMediaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF03BB8A1E7892A600384D0C /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		CF08D23C1E7A0B1D00075FE6 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		CF0C25AD1E795EE200607BAA /* CircleBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleBtn.swift; sourceTree = "<group>"; };
 		CF0C25AF1E79623000607BAA /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		CF19D0FE1E75C9BD00003FB2 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CF08D23B1E7A0AFF00075FE6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CF08D23C1E7A0B1D00075FE6 /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		CF19D0FB1E75BB6800003FB2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		CF41E5781E7432DA0045CEB6 /* SocialMedia */ = {
 			isa = PBXGroup;
 			children = (
+				CF08D23B1E7A0AFF00075FE6 /* Services */,
 				CF19D10C1E76256300003FB2 /* SocialMedia.entitlements */,
 				CF19D1001E75CA4500003FB2 /* Util */,
 				CF19D0FD1E75BB7600003FB2 /* Controller */,
@@ -522,6 +533,7 @@
 				CF0C25AE1E795EE200607BAA /* CircleBtn.swift in Sources */,
 				CF03BB8B1E7892A600384D0C /* CircleView.swift in Sources */,
 				CF19D1061E75D26900003FB2 /* FancyField.swift in Sources */,
+				CF08D23D1E7A0B1D00075FE6 /* DataService.swift in Sources */,
 				CF41E57C1E7432DB0045CEB6 /* SignInVC.swift in Sources */,
 				CF19D1041E75CD0800003FB2 /* RoundButton.swift in Sources */,
 				CF19D1081E75D39800003FB2 /* FancyButton.swift in Sources */,
