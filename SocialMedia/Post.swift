@@ -39,8 +39,8 @@ class Post {
         if let caption = postData["caption"] as? String {
             self._caption = caption
         }
-        if let imageUrl = postData["imageUrl"] as? String{
-            self._imageUrl = imageUrl
+        if let imageUrl = postData["imageUrl"] as? NSString{
+            self._imageUrl = (imageUrl as NSString!) as String!
         }
         if let likes = postData["likes"] as? Int{
             self._likes = likes
