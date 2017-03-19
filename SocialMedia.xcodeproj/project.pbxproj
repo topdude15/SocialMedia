@@ -19,9 +19,9 @@
 		CF19D1061E75D26900003FB2 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1051E75D26900003FB2 /* FancyField.swift */; };
 		CF19D1081E75D39800003FB2 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1071E75D39800003FB2 /* FancyButton.swift */; };
 		CF2F1F061E780278006EE222 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F1F051E780278006EE222 /* FeedVC.swift */; };
+		CF41497B1E7F0B04005CC7DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4149791E7F0B04005CC7DB /* Main.storyboard */; };
 		CF41E57A1E7432DA0045CEB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */; };
 		CF41E57C1E7432DB0045CEB6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */; };
-		CF41E57F1E7432DB0045CEB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF41E57D1E7432DB0045CEB6 /* Main.storyboard */; };
 		CF41E5811E7432DB0045CEB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF41E5801E7432DB0045CEB6 /* Assets.xcassets */; };
 		CF41E5841E7432DB0045CEB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF41E5821E7432DB0045CEB6 /* LaunchScreen.storyboard */; };
 		CF41E58F1E7432DC0045CEB6 /* SocialMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E58E1E7432DC0045CEB6 /* SocialMediaTests.swift */; };
@@ -68,11 +68,11 @@
 		CF19D1051E75D26900003FB2 /* FancyField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyField.swift; sourceTree = "<group>"; };
 		CF19D1071E75D39800003FB2 /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
 		CF19D10C1E76256300003FB2 /* SocialMedia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialMedia.entitlements; sourceTree = "<group>"; };
-		CF2F1F051E780278006EE222 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		CF2F1F051E780278006EE222 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		CF41497A1E7F0B04005CC7DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF41E5761E7432DA0045CEB6 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		CF41E57E1E7432DB0045CEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF41E5801E7432DB0045CEB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CF41E5831E7432DB0045CEB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF41E5851E7432DB0045CEB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 				CF19D0FD1E75BB7600003FB2 /* Controller */,
 				CF19D0FC1E75BB6D00003FB2 /* View */,
 				CF19D0FB1E75BB6800003FB2 /* Model */,
-				CF41E57D1E7432DB0045CEB6 /* Main.storyboard */,
 				CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */,
+				CF4149791E7F0B04005CC7DB /* Main.storyboard */,
 				CF41E5801E7432DB0045CEB6 /* Assets.xcassets */,
 				CF41E5821E7432DB0045CEB6 /* LaunchScreen.storyboard */,
 				CF41E5851E7432DB0045CEB6 /* Info.plist */,
@@ -370,7 +370,7 @@
 				CF41E5841E7432DB0045CEB6 /* LaunchScreen.storyboard in Resources */,
 				CF41E5A81E7432E70045CEB6 /* GoogleService-Info.plist in Resources */,
 				CF41E5811E7432DB0045CEB6 /* Assets.xcassets in Resources */,
-				CF41E57F1E7432DB0045CEB6 /* Main.storyboard in Resources */,
+				CF41497B1E7F0B04005CC7DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,10 +581,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CF41E57D1E7432DB0045CEB6 /* Main.storyboard */ = {
+		CF4149791E7F0B04005CC7DB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CF41E57E1E7432DB0045CEB6 /* Base */,
+				CF41497A1E7F0B04005CC7DB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -708,7 +708,7 @@
 				);
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keyloftstudios.SocialMedia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keyloftstudios.Streak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -727,7 +727,7 @@
 				);
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keyloftstudios.SocialMedia;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keyloftstudios.Streak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

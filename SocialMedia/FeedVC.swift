@@ -15,15 +15,19 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
-    @IBOutlet weak var captionField: FancyField!
+    @IBOutlet weak var captionField: UITextField!
+
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
     
+
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        captionField.delegate = self as? UITextFieldDelegate
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,13 +47,23 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
+
                     }
                 }
             }
+            self.posts.reverse()
             self.tableView.reloadData()
         })
     }
     
+    @IBAction func resignKeyboard(sender: AnyObject) {
+        sender.resignFirstResponder()
+    }
+    @IBAction func closeBox(_ sender: Any) {
+    }
+    @IBAction func close(_ sender: Any) {
+    }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -89,14 +103,40 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             present(imagePicker, animated: true, completion: nil)
         
     }
+    
+    //MARK: UPLOAD
+    
+    
+    //Post button tapped to create post
+    
     @IBAction func postButtonTapped(_ sender: Any) {
         
         guard let caption = captionField.text, caption != "" else {
             print("TREVOR: Caption must be entered")
+            let message = "Please enter a caption to continue"
+            let alertController = UIAlertController(
+                title: "Posting requires an caption", // This gets overridden below.
+                message: message,
+                preferredStyle: .alert
+            )
+            let okAction = UIAlertAction(title: "OK", style: .cancel) { _ -> Void in
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true)
             return
         }
         guard let image = imageAdd.image, imageSelected == true else {
             print("TREVOR: An image must be selected")
+            let message = "Please select an image to continue"
+            let alertController = UIAlertController(
+                title: "Posting requires an image", // This gets overridden below.
+                message: message,
+                preferredStyle: .alert
+            )
+            let okAction = UIAlertAction(title: "OK", style: .cancel) { _ -> Void in
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true)
             return
         }
         
@@ -121,13 +161,25 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
     }
     
+    //MARK: Actual post data
+    
     func postToFirebase(imgUrl: String) {
-
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        let utcTimeZoneStr = formatter.string(from: date)
+        
         let post: Dictionary<String, AnyObject> = [
             "caption": captionField.text as AnyObject,
             "imageUrl": imgUrl as AnyObject,
-            "likes": 0 as AnyObject
+            "likes": 0 as AnyObject,
+            "dateCreated": utcTimeZoneStr as AnyObject
         ]
+        
+
 
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
