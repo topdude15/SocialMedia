@@ -27,6 +27,7 @@
 		CF41E58F1E7432DC0045CEB6 /* SocialMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E58E1E7432DC0045CEB6 /* SocialMediaTests.swift */; };
 		CF41E59A1E7432DC0045CEB6 /* SocialMediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E5991E7432DC0045CEB6 /* SocialMediaUITests.swift */; };
 		CF41E5A81E7432E70045CEB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF41E5A71E7432E70045CEB6 /* GoogleService-Info.plist */; };
+		CFF54C4D1E8197B100BB0891 /* usernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF54C4C1E8197B100BB0891 /* usernameVC.swift */; };
 		D2190D6FCD9CF7880A0A4E56 /* Pods_SocialMediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D4324BE081DE5D7E326D1A /* Pods_SocialMediaTests.framework */; };
 		E105E6E484BC6450B7929BFA /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D25B00C9E388684729482C7 /* Pods_SocialMedia.framework */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		CF41E5991E7432DC0045CEB6 /* SocialMediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaUITests.swift; sourceTree = "<group>"; };
 		CF41E59B1E7432DC0045CEB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF41E5A71E7432E70045CEB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CFF54C4C1E8197B100BB0891 /* usernameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usernameVC.swift; sourceTree = "<group>"; };
 		F00F62964E19E49AA9885E13 /* Pods-SocialMediaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMediaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMediaUITests/Pods-SocialMediaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 			children = (
 				CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */,
 				CF2F1F051E780278006EE222 /* FeedVC.swift */,
+				CFF54C4C1E8197B100BB0891 /* usernameVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				CF08D23D1E7A0B1D00075FE6 /* DataService.swift in Sources */,
 				CF1192D51E7B42AF000181F8 /* Post.swift in Sources */,
 				CF41E57C1E7432DB0045CEB6 /* SignInVC.swift in Sources */,
+				CFF54C4D1E8197B100BB0891 /* usernameVC.swift in Sources */,
 				CF19D1041E75CD0800003FB2 /* RoundButton.swift in Sources */,
 				CF19D1081E75D39800003FB2 /* FancyButton.swift in Sources */,
 				CF2F1F061E780278006EE222 /* FeedVC.swift in Sources */,
@@ -707,6 +711,7 @@
 					"$(PROJECT_DIR)/SocialMedia",
 				);
 				INFOPLIST_FILE = SocialMedia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keyloftstudios.Streak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -726,6 +731,7 @@
 					"$(PROJECT_DIR)/SocialMedia",
 				);
 				INFOPLIST_FILE = SocialMedia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keyloftstudios.Streak;
 				PRODUCT_NAME = "$(TARGET_NAME)";

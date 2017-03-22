@@ -12,6 +12,9 @@ import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
 
+var email = ""
+var password = ""
+
 class SignInVC: UIViewController {
     
     @IBOutlet weak var emailField: FancyField!
@@ -66,11 +69,13 @@ class SignInVC: UIViewController {
     
     //Keyboard hider
     @IBAction func resignKeyboard(sender: AnyObject) {
-        sender.resignFirstResponder()
+        _ = sender.resignFirstResponder()
+    }
+    @IBAction func hideEmailOnTouch(_ sender: Any) {
+    }
+    @IBAction func keyboardHider(_ sender: Any) {
     }
     @IBAction func hidePassword(_ sender: Any) {
-    }
-    @IBAction func hideEmail(_ sender: Any) {
     }
     
     //Authentication with Firebase
@@ -108,6 +113,7 @@ class SignInVC: UIViewController {
                     if let user = user {
                     let userData = ["provider": user.providerID]
                         self.completeSignIn(id: user.uid, userData: userData)
+                        //self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -127,7 +133,12 @@ class SignInVC: UIViewController {
                             print("TREVOR: Successfully authenticated email user with Firebase")
                             if let user = user {
                             let userData = ["provider": user.providerID]
-                            self.completeSignIn(id: user.uid, userData: userData)
+                            DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
+                            var email = self.emailField.text
+                            var password = self.pwdField.text
+                            print("TREVOR: Still here!")
+                            self.performSegue(withIdentifier: "goToUsername", sender: nil)
+                            //self.completeSignIn(id: user.uid, userData: userData)
 
                             }
                         }
@@ -145,4 +156,5 @@ class SignInVC: UIViewController {
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
 }
+
 

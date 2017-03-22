@@ -57,7 +57,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     @IBAction func resignKeyboard(sender: AnyObject) {
-        sender.resignFirstResponder()
+        _ = sender.resignFirstResponder()
     }
     @IBAction func closeBox(_ sender: Any) {
     }

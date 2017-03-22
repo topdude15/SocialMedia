@@ -21,6 +21,10 @@ class DataService {
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
     
+    func addFirebaseUsername(uid: String, username: Dictionary<String, String>) {
+        REF_USERS.child(uid).updateChildValues(username)
+    }
+    
     //Storage references
     
     private var _REF_IMAGES = STORAGE_BASE.child("post-pics")
