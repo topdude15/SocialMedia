@@ -6,6 +6,7 @@ target 'SocialMedia' do
   use_frameworks!
 
   # Pods for SocialMedia
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'

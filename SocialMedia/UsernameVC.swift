@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import Firebase
+
+var postedBy = ""
 
 class usernameVC: UIViewController {
+    
+    @IBOutlet weak var usernameBox: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +26,31 @@ class usernameVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //    @IBAction func addUsername(_ sender: Any) {
+    //        let usernameValue = usernameBox.text //Gets value from username box
+    //        let username = ["username": usernameValue]   //Sets dictonary for username to be set into Firebase database
+    //        //FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in     //Logs the user into Firebase based on username and password set in the sign in VC
+    //        //DataService.ds.addFirebaseUsername(uid: (user?.uid)!, username: username as! Dictionary<String, String>)   //Adds the username to the database
+    //        self.performSegue(withIdentifier: "feedFromUsername", sender: nil)
 
-    /*
-    // MARK: - Navigation
+    @IBAction func addUsernameTapped(_ sender: Any) {
+        let username = ["username": usernameBox.text!]
+        print("TREVOR: \(username)")
+        print("TREVOR: \(UserName.sharedInstance.email)")
+        print("TREVOR: \(UserName.sharedInstance.password)")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        defaults.set(usernameBox.text!, forKey: "username")
+        
+        Poster.sharedInstance.postedBy = usernameBox.text
+        
+        FIRAuth.auth()?.signIn(withEmail: UserName.sharedInstance.email, password: UserName.sharedInstance.password, completion: { (user, error) in
+            if error != nil {
+                print("TREVOR: Could not add username to user \(String(describing: error))")
+            } else {
+                DataService.ds.addFirebaseUsername(uid: (user?.uid)!, username: username)
+            }
+        })
+        performSegue(withIdentifier: "feedFromUsername", sender: nil)
     }
-    */
-
 }

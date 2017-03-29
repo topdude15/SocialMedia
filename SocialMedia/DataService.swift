@@ -25,6 +25,7 @@ class DataService {
         REF_USERS.child(uid).updateChildValues(username)
     }
     
+    
     //Storage references
     
     private var _REF_IMAGES = STORAGE_BASE.child("post-pics")

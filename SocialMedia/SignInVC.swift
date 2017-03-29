@@ -59,10 +59,36 @@ class SignInVC: UIViewController {
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true)
             } else {
-                print("TREVOR: Successfully authenticated with Facebook")
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-                self.firebaseAuth(credential)
+                FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
+                    if error != nil {
+                        print("TREVOR: Unable to authenticate email user with Firebase")
+                        let message = "Verify your e-mail and password are correct and try again"
+                        let alertController = UIAlertController(
+                            title: "Unable to log in", // This gets overridden below.
+                            message: message,
+                            preferredStyle: .alert
+                        )
+                        let okAction = UIAlertAction(title: "OK", style: .cancel) { _ -> Void in
+                        }
+                        alertController.addAction(okAction)
+                        self.present(alertController, animated: true)
+                    } else {
+                        print("TREVOR: Successfully authenticated email user with Firebase")
+                        if let user = user {
+                            let userData = ["provider": user.providerID]
+                            print("TREVOR: \(userData)")
+                            DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
+                            UserName.sharedInstance.email = self.emailField.text
+                            UserName.sharedInstance.password = self.pwdField.text
+                            print("TREVOR: Still here!")
+                            self.performSegue(withIdentifier: "goToUsername", sender: nil)
+                            //self.completeSignIn(id: user.uid, userData: userData)
+                            
+                        }
+                    }
+                })
             }
+            
         }
         
     }
@@ -133,11 +159,12 @@ class SignInVC: UIViewController {
                             print("TREVOR: Successfully authenticated email user with Firebase")
                             if let user = user {
                             let userData = ["provider": user.providerID]
+                                print("TREVOR: \(userData)")
                             DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
-                            var email = self.emailField.text
-                            var password = self.pwdField.text
+                            UserName.sharedInstance.email = self.emailField.text
+                            UserName.sharedInstance.password = self.pwdField.text
                             print("TREVOR: Still here!")
-                            self.performSegue(withIdentifier: "goToUsername", sender: nil)
+                                self.performSegue(withIdentifier: "goToUsername", sender: nil)
                             //self.completeSignIn(id: user.uid, userData: userData)
 
                             }
@@ -156,5 +183,4 @@ class SignInVC: UIViewController {
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
 }
-
 

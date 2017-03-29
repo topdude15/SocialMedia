@@ -9,6 +9,8 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.20.0):
     - FBSDKCoreKit
+  - Firebase (3.14.0):
+    - Firebase/Core (= 3.14.0)
   - Firebase/Auth (3.14.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -53,6 +55,7 @@ PODS:
 DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -74,6 +77,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
   SwiftKeychainWrapper: 38952a3636320ae61bad3513cadd870929de7a4a
 
-PODFILE CHECKSUM: 14fe41f4b3fa151b45cedf47bf5d6f6a59cc5745
+PODFILE CHECKSUM: 7303d5f425e8a1429c0a457bbe62d7d53b28ca64
 
 COCOAPODS: 1.2.0

@@ -99,9 +99,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     @IBAction func addImageTapped(_ sender: Any) {
-        
             present(imagePicker, animated: true, completion: nil)
-        
     }
     
     //MARK: UPLOAD
@@ -165,6 +163,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     func postToFirebase(imgUrl: String) {
         
+        //Grab username 
+        let postedBy = defaults.string(forKey: "username")
+        
         let date = Date()
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
@@ -176,11 +177,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             "caption": captionField.text as AnyObject,
             "imageUrl": imgUrl as AnyObject,
             "likes": 0 as AnyObject,
-            "dateCreated": utcTimeZoneStr as AnyObject
+            "dateCreated": utcTimeZoneStr as AnyObject,
+            "postedBy": postedBy as AnyObject
         ]
-        
-
-
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
         firebasePost.setValue(post)

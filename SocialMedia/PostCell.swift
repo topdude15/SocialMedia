@@ -28,6 +28,7 @@ class PostCell: UITableViewCell {
         self.post = post
         self.caption.text = post.caption
         self.likesLabel.text = "\(post.likes)"
+        self.usernameLabe.text = post.postedBy
         
         if img != nil {
             self.postImg.image = img

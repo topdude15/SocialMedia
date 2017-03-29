@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class UserName {
+    static var sharedInstance = UserName()
+    private init () { }
+    
+    var email: String!
+    var password: String!
+    
+}
+class Poster {
+    static var sharedInstance = Poster()
+    private init () { }
+    
+    var postedBy: String!
+    
+}
+let defaults = UserDefaults.standard
