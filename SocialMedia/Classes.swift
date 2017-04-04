@@ -23,4 +23,12 @@ class Poster {
     var postedBy: String!
     
 }
+class DisplayName {
+    static var sharedInstance = DisplayName()
+    private init () { }
+    
+    var displayName: String!
+    
+}
+
 let defaults = UserDefaults.standard

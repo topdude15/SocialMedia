@@ -24,11 +24,11 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-            performSegue(withIdentifier: "goToFeed", sender: nil)
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+//            performSegue(withIdentifier: "goToFeed", sender: nil)
+//        }
+//    }
     @IBAction func facebookBtnTapped(_ sender: Any) {
         
         let facebookLogin = FBSDKLoginManager()
@@ -136,18 +136,20 @@ class SignInVC: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("TREVOR: Email user authenticated with Firebase")
+                    UserName.sharedInstance.email = self.emailField.text
+                    UserName.sharedInstance.password = self.pwdField.text  
                     if let user = user {
                     let userData = ["provider": user.providerID]
-                        self.completeSignIn(id: user.uid, userData: userData)
-                        //self.completeSignIn(id: user.uid, userData: userData)
+                    self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error != nil {
+                            //Notification if creating the user was unsuccessful
                             print("TREVOR: Unable to authenticate email user with Firebase")
                             let message = "Verify your e-mail and password are correct and try again"
                             let alertController = UIAlertController(
-                                title: "Unable to log in", // This gets overridden below.
+                                title: "Unable to log in",
                                 message: message,
                                 preferredStyle: .alert
                             )
@@ -155,15 +157,18 @@ class SignInVC: UIViewController {
                             }
                             alertController.addAction(okAction)
                             self.present(alertController, animated: true)
+                            
                         } else {
                             print("TREVOR: Successfully authenticated email user with Firebase")
                             if let user = user {
-                            let userData = ["provider": user.providerID]
+                                let userData = ["provider": user.providerID]
                                 print("TREVOR: \(userData)")
-                            DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
-                            UserName.sharedInstance.email = self.emailField.text
-                            UserName.sharedInstance.password = self.pwdField.text
-                            print("TREVOR: Still here!")
+                                //Create the Firebase user from the DataService sheet
+                                DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
+                                //Update the values for the email and password in their respective classes
+                                UserName.sharedInstance.email = self.emailField.text
+                                UserName.sharedInstance.password = self.pwdField.text
+                                print("TREVOR: Still here!")
                                 self.performSegue(withIdentifier: "goToUsername", sender: nil)
                             //self.completeSignIn(id: user.uid, userData: userData)
 
@@ -177,7 +182,6 @@ class SignInVC: UIViewController {
     
     //Finishes logging user in and sends them to the feed
     func completeSignIn(id: String, userData: Dictionary<String, String>) {
-        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("TREVOR: Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToFeed", sender: nil)

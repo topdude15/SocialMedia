@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -161,6 +161,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="closeUsernameBox:" destination="hlB-fe-9NA" eventType="editingDidEndOnExit" id="Vnp-Sq-eCL"/>
+                                </connections>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zH6-9p-47b">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
@@ -237,7 +240,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk1-bi-ZUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="-527.58620689655174"/>
+            <point key="canvasLocation" x="313" y="-649"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="nOB-Bh-xZe">
@@ -443,6 +446,7 @@
                                         <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="caption" destination="dAl-R8-fn4" id="zfZ-nx-jVE"/>
+                                            <outlet property="likeImage" destination="kbR-vB-xQ7" id="VN1-QR-7kR"/>
                                             <outlet property="likesLabel" destination="NiM-r2-Kbf" id="3Tc-Gt-AW6"/>
                                             <outlet property="postImg" destination="6fB-t8-JxS" id="Toy-vj-674"/>
                                             <outlet property="profileImg" destination="WX9-sW-dPX" id="0Bk-Dq-Nho"/>
@@ -475,7 +479,7 @@
                         <outlet property="captionField" destination="Wqd-qg-bxI" id="NCX-ti-Zys"/>
                         <outlet property="imageAdd" destination="B2D-dw-t2g" id="huY-6b-b7t"/>
                         <outlet property="tableView" destination="xeF-V1-NAW" id="rHB-jA-EVR"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="DYI-Ll-yKl"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToSignIn" id="DYI-Ll-yKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYm-NM-dGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -485,7 +489,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="572" y="134"/>
+            <point key="canvasLocation" x="313" y="134"/>
         </scene>
     </scenes>
     <resources>

@@ -16,13 +16,17 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
     @IBOutlet weak var captionField: UITextField!
-
+    @IBOutlet weak var likeImage: UIImageView!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
     
+    @IBAction func getUid(_ sender: Any) {
+        let user = DataService.ds.REF_USER_CURRENT
+        print(user)
+    }
 
     
     override func viewDidLoad() {
@@ -35,6 +39,24 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
+        
+        FIRAuth.auth()?.signIn(withEmail: UserName.sharedInstance.email, password: UserName.sharedInstance.password, completion: { (user, error) in
+            if error != nil {
+                self.performSegue(withIdentifier: "backToSignIn", sender: nil)
+            }
+        })
+        
+        //            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+        //                if error == nil {
+        //                    print("TREVOR: Email user authenticated with Firebase")
+        //                    UserName.sharedInstance.email = self.emailField.text
+        //                    UserName.sharedInstance.password = self.pwdField.text
+        //                    if let user = user {
+        //                        let userData = ["provider": user.providerID]
+        //                        completeSignIn(id: user.uid, userData: userData)
+        //                    }
+        //                }
+        //        }
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             
@@ -49,6 +71,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         self.posts.append(post)
 
                     }
+                    
                 }
             }
             self.posts.reverse()
@@ -160,35 +183,37 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     //MARK: Actual post data
-    
     func postToFirebase(imgUrl: String) {
         
-        //Grab username 
-        let postedBy = defaults.string(forKey: "username")
+        let uid = FIRAuth.auth()?.currentUser?.uid
         
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
-        formatter.timeZone = TimeZone(abbreviation: "UTC")
-        let utcTimeZoneStr = formatter.string(from: date)
-        
-        let post: Dictionary<String, AnyObject> = [
-            "caption": captionField.text as AnyObject,
-            "imageUrl": imgUrl as AnyObject,
-            "likes": 0 as AnyObject,
-            "dateCreated": utcTimeZoneStr as AnyObject,
-            "postedBy": postedBy as AnyObject
-        ]
-        
-        let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
-        firebasePost.setValue(post)
-        
-        captionField.text = ""
-        imageSelected = false
-        imageAdd.image = UIImage(named: "add-image")
-        
-        tableView.reloadData()
+        DataService.ds.REF_USERS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                
+                print("TREVOR: I have arrived")
+                
+                let username = dictionary["username"] as! String
+                DisplayName.sharedInstance.displayName = username
+                
+                let post: Dictionary<String, AnyObject> = [
+                    "caption": self.captionField.text as AnyObject,
+                    "imageUrl": imgUrl as AnyObject,
+                    "likes": 0 as AnyObject,
+                    "postedBy": DisplayName.sharedInstance.displayName! as AnyObject
+                ]
+                
+                let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+                firebasePost.setValue(post)
+                
+                self.captionField.text = ""
+                self.imageSelected = false
+                self.imageAdd.image = UIImage(named: "add-image")
+                
+                self.tableView.reloadData()
+
+            }
+        })
+
     }
     
       @IBAction func signOutTapped(_ sender: Any) {

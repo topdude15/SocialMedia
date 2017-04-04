@@ -19,7 +19,6 @@
 		CF19D1061E75D26900003FB2 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1051E75D26900003FB2 /* FancyField.swift */; };
 		CF19D1081E75D39800003FB2 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1071E75D39800003FB2 /* FancyButton.swift */; };
 		CF2F1F061E780278006EE222 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F1F051E780278006EE222 /* FeedVC.swift */; };
-		CF41497B1E7F0B04005CC7DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF4149791E7F0B04005CC7DB /* Main.storyboard */; };
 		CF41E57A1E7432DA0045CEB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */; };
 		CF41E57C1E7432DB0045CEB6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */; };
 		CF41E5811E7432DB0045CEB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF41E5801E7432DB0045CEB6 /* Assets.xcassets */; };
@@ -29,6 +28,7 @@
 		CF41E5A81E7432E70045CEB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF41E5A71E7432E70045CEB6 /* GoogleService-Info.plist */; };
 		CFCA3FF91E82EE9600EB0CBD /* usernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA3FF81E82EE9600EB0CBD /* usernameVC.swift */; };
 		CFCA3FFB1E82FC7600EB0CBD /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA3FFA1E82FC7600EB0CBD /* Classes.swift */; };
+		CFECBC271E915347006EB464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFECBC251E915347006EB464 /* Main.storyboard */; };
 		D2190D6FCD9CF7880A0A4E56 /* Pods_SocialMediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D4324BE081DE5D7E326D1A /* Pods_SocialMediaTests.framework */; };
 		E105E6E484BC6450B7929BFA /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D25B00C9E388684729482C7 /* Pods_SocialMedia.framework */; };
 /* End PBXBuildFile section */
@@ -71,7 +71,6 @@
 		CF19D1071E75D39800003FB2 /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
 		CF19D10C1E76256300003FB2 /* SocialMedia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialMedia.entitlements; sourceTree = "<group>"; };
 		CF2F1F051E780278006EE222 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
-		CF41497A1E7F0B04005CC7DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF41E5761E7432DA0045CEB6 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -87,6 +86,7 @@
 		CF41E5A71E7432E70045CEB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFCA3FF81E82EE9600EB0CBD /* usernameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usernameVC.swift; sourceTree = "<group>"; };
 		CFCA3FFA1E82FC7600EB0CBD /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		CFECBC261E915347006EB464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F00F62964E19E49AA9885E13 /* Pods-SocialMediaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMediaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMediaUITests/Pods-SocialMediaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,12 +217,12 @@
 			children = (
 				CF08D23B1E7A0AFF00075FE6 /* Services */,
 				CF19D10C1E76256300003FB2 /* SocialMedia.entitlements */,
+				CF19D0FB1E75BB6800003FB2 /* Model */,
 				CF19D1001E75CA4500003FB2 /* Util */,
 				CF19D0FD1E75BB7600003FB2 /* Controller */,
 				CF19D0FC1E75BB6D00003FB2 /* View */,
-				CF19D0FB1E75BB6800003FB2 /* Model */,
 				CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */,
-				CF4149791E7F0B04005CC7DB /* Main.storyboard */,
+				CFECBC251E915347006EB464 /* Main.storyboard */,
 				CF41E5801E7432DB0045CEB6 /* Assets.xcassets */,
 				CF41E5821E7432DB0045CEB6 /* LaunchScreen.storyboard */,
 				CF41E5851E7432DB0045CEB6 /* Info.plist */,
@@ -376,7 +376,7 @@
 				CF41E5841E7432DB0045CEB6 /* LaunchScreen.storyboard in Resources */,
 				CF41E5A81E7432E70045CEB6 /* GoogleService-Info.plist in Resources */,
 				CF41E5811E7432DB0045CEB6 /* Assets.xcassets in Resources */,
-				CF41497B1E7F0B04005CC7DB /* Main.storyboard in Resources */,
+				CFECBC271E915347006EB464 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,20 +589,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CF4149791E7F0B04005CC7DB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF41497A1E7F0B04005CC7DB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CF41E5821E7432DB0045CEB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CF41E5831E7432DB0045CEB6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CFECBC251E915347006EB464 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFECBC261E915347006EB464 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -711,10 +711,7 @@
 				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9F5M35K84C;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SocialMedia",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -722,6 +719,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -733,10 +731,7 @@
 				CODE_SIGN_ENTITLEMENTS = SocialMedia/SocialMedia.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 9F5M35K84C;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/SocialMedia",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = SocialMedia/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -744,6 +739,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
