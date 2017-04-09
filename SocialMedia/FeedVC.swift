@@ -128,6 +128,15 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     //MARK: UPLOAD
     
     
+    
+    
+    @IBAction func signOutTapped(_ sender: Any) {
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        print("TREVOR: ID removed from keychain - \(keychainResult)")
+        try! FIRAuth.auth()?.signOut()
+        performSegue(withIdentifier: "goToSignIn", sender: nil)
+    }
+    
     //Post button tapped to create post
     
     @IBAction func postButtonTapped(_ sender: Any) {
@@ -170,9 +179,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             DataService.ds.REF_POST_IMAGES.child(imgUid).put(imgData, metadata: metadata) { (metadata, error) in
                 
                 if error != nil {
-                    print("TREVOR: Unable to upload image to Firebase Storage \(String(describing: error))")
+                    print("Unable to upload image to Firebase Storage \(String(describing: error))")
                 } else{
-                    print("TREVOR: Successfully uploaded image to Firebase Storage")
+                    print("Successfully uploaded image to Firebase Storage")
                     let downloadUrl = metadata?.downloadURL()?.absoluteString
                     if let link = downloadUrl {
                         self.postToFirebase(imgUrl: link)
@@ -185,43 +194,37 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     //MARK: Actual post data
     func postToFirebase(imgUrl: String) {
         
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        
-        DataService.ds.REF_USERS.child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                
-                print("TREVOR: I have arrived")
-                
-                let username = dictionary["username"] as! String
-                DisplayName.sharedInstance.displayName = username
-                
-                let post: Dictionary<String, AnyObject> = [
-                    "caption": self.captionField.text as AnyObject,
-                    "imageUrl": imgUrl as AnyObject,
-                    "likes": 0 as AnyObject,
-                    "postedBy": DisplayName.sharedInstance.displayName! as AnyObject
-                ]
-                
-                let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
-                firebasePost.setValue(post)
-                
-                self.captionField.text = ""
-                self.imageSelected = false
-                self.imageAdd.image = UIImage(named: "add-image")
-                
-                self.tableView.reloadData()
-
+        FIRAuth.auth()?.signIn(withEmail: UserName.sharedInstance.email, password: UserName.sharedInstance.password, completion: { (user, error) in
+            if error == nil {
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            
+            print(uid!)
+            
+            FIRDatabase.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    
+                    let username = dictionary["username"]
+                    
+                    let post: Dictionary<String, AnyObject> = [
+                        "caption": self.captionField.text as AnyObject,
+                        "imageUrl": imgUrl as AnyObject,
+                        "likes": 0 as AnyObject,
+                        "postedBy": username!
+                    ]
+                    
+                    let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+                    firebasePost.setValue(post)
+                    
+                    self.captionField.text = ""
+                    self.imageSelected = false
+                    self.imageAdd.image = UIImage(named: "add-image")
+                    
+                    self.tableView.reloadData()
+                    
+                    }
+                })
             }
         })
-
+        
     }
-    
-      @IBAction func signOutTapped(_ sender: Any) {
-        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
-        print("TREVOR: ID removed from keychain - \(keychainResult)")
-        try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "goToSignIn", sender: nil)
-    }
-    
-
 }
