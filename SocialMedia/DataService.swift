@@ -30,7 +30,7 @@ class DataService {
     //Storage references
     
     private var _REF_IMAGES = STORAGE_BASE.child("post-pics")
-    
+    private var _REF_USER_IMAGE = STORAGE_BASE.child("user-pics")
     var REF_BASE: FIRDatabaseReference {
         return _REF_BASE
     }
@@ -42,13 +42,6 @@ class DataService {
     var REF_USERS: FIRDatabaseReference {
         return _REF_USERS
     }
-    
-//    var REF_USER_CURRENT: FIRDatabaseReference {
-//        let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
-//        //let user = REF_USERS.child(uid!)
-//        let user = _REF_USERS.child(uid!)
-//        return user
-//    }
     
     var REF_USER_CURRENT: FIRDatabaseReference {
         let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
@@ -64,7 +57,9 @@ class DataService {
     var REF_POST_IMAGES: FIRStorageReference {
         return _REF_IMAGES
     }
-
+    var REF_USER_IMAGE: FIRStorageReference {
+        return _REF_USER_IMAGE
+    }
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, String>) {
         REF_USERS.child(uid).updateChildValues(userData)
     }

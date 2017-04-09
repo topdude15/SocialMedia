@@ -16,19 +16,4 @@ class UserName {
     var password: String!
     
 }
-class Poster {
-    static var sharedInstance = Poster()
-    private init () { }
-    
-    var postedBy: String!
-    
-}
-class DisplayName {
-    static var sharedInstance = DisplayName()
-    private init () { }
-    
-    var displayName: String!
-    
-}
-
 let defaults = UserDefaults.standard

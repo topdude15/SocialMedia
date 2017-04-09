@@ -24,11 +24,11 @@ class SignInVC: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
-//            performSegue(withIdentifier: "goToFeed", sender: nil)
-//        }
-//    }
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "goToFeed", sender: nil)
+        }
+    }
     @IBAction func facebookBtnTapped(_ sender: Any) {
         
         let facebookLogin = FBSDKLoginManager()
@@ -132,15 +132,15 @@ class SignInVC: UIViewController {
 
     //Action for when user presses "Sign In"
     @IBAction func signInTapped(_ sender: Any) {
+        UserName.sharedInstance.email = self.emailField.text
+        UserName.sharedInstance.password = self.pwdField.text
         if let email = emailField.text, let password = pwdField.text {
             FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("TREVOR: Email user authenticated with Firebase")
-                    UserName.sharedInstance.email = self.emailField.text
-                    UserName.sharedInstance.password = self.pwdField.text  
                     if let user = user {
-                    let userData = ["provider": user.providerID]
-                    self.completeSignIn(id: user.uid, userData: userData)
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -163,15 +163,16 @@ class SignInVC: UIViewController {
                             if let user = user {
                                 let userData = ["provider": user.providerID]
                                 print("TREVOR: \(userData)")
+                                
                                 //Create the Firebase user from the DataService sheet
+                                
                                 DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
+                                
                                 //Update the values for the email and password in their respective classes
                                 UserName.sharedInstance.email = self.emailField.text
                                 UserName.sharedInstance.password = self.pwdField.text
                                 print("TREVOR: Still here!")
                                 self.performSegue(withIdentifier: "goToUsername", sender: nil)
-                            //self.completeSignIn(id: user.uid, userData: userData)
-
                             }
                         }
                     })

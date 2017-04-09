@@ -9,6 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import Firebase
+import FirebaseDatabase
 
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -39,24 +40,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
-        
-        FIRAuth.auth()?.signIn(withEmail: UserName.sharedInstance.email, password: UserName.sharedInstance.password, completion: { (user, error) in
-            if error != nil {
-                self.performSegue(withIdentifier: "backToSignIn", sender: nil)
-            }
-        })
-        
-        //            FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-        //                if error == nil {
-        //                    print("TREVOR: Email user authenticated with Firebase")
-        //                    UserName.sharedInstance.email = self.emailField.text
-        //                    UserName.sharedInstance.password = self.pwdField.text
-        //                    if let user = user {
-        //                        let userData = ["provider": user.providerID]
-        //                        completeSignIn(id: user.uid, userData: userData)
-        //                    }
-        //                }
-        //        }
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             
@@ -125,11 +108,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             present(imagePicker, animated: true, completion: nil)
     }
     
-    //MARK: UPLOAD
-    
-    
-    
-    
     @IBAction func signOutTapped(_ sender: Any) {
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("TREVOR: ID removed from keychain - \(keychainResult)")
@@ -197,19 +175,21 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         FIRAuth.auth()?.signIn(withEmail: UserName.sharedInstance.email, password: UserName.sharedInstance.password, completion: { (user, error) in
             if error == nil {
             let uid = FIRAuth.auth()?.currentUser?.uid
-            
-            print(uid!)
-            
+
             FIRDatabase.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
                 if let dictionary = snapshot.value as? [String: AnyObject] {
                     
+                    print(dictionary)
+                    
                     let username = dictionary["username"]
+                    let posterImage = dictionary["userImage"]
                     
                     let post: Dictionary<String, AnyObject> = [
                         "caption": self.captionField.text as AnyObject,
                         "imageUrl": imgUrl as AnyObject,
                         "likes": 0 as AnyObject,
-                        "postedBy": username!
+                        "postedBy": username as AnyObject,
+                        "posterImage": posterImage as AnyObject
                     ]
                     
                     let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
@@ -220,7 +200,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     self.imageAdd.image = UIImage(named: "add-image")
                     
                     self.tableView.reloadData()
-                    
                     }
                 })
             }

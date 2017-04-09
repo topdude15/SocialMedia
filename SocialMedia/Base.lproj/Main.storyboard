@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-212" y="134"/>
+            <point key="canvasLocation" x="-639" y="134"/>
         </scene>
         <!--UsernameVC-->
         <scene sceneID="idg-MH-a6T">
@@ -236,11 +236,113 @@
                     <connections>
                         <outlet property="usernameBox" destination="d8C-n3-XrQ" id="PUi-3W-Sli"/>
                         <segue destination="oFx-xv-9Fr" kind="show" identifier="feedFromUsername" id="oVh-h8-tNx"/>
+                        <segue destination="pWI-X8-wkx" kind="show" identifier="addUserImage" id="mRm-zL-fjl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk1-bi-ZUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="313" y="-649"/>
+            <point key="canvasLocation" x="313" y="-600"/>
+        </scene>
+        <!--Add User ImageVC-->
+        <scene sceneID="sVh-Iu-q6j">
+            <objects>
+                <viewController id="pWI-X8-wkx" customClass="addUserImageVC" customModule="SocialMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ilP-AM-5Pb"/>
+                        <viewControllerLayoutGuide type="bottom" id="lsk-Rx-Oqf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AUu-Pa-dzs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UD5-VO-er2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create your account" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7r-Of-xpP">
+                                        <rect key="frame" x="28" y="60" width="318" height="28"/>
+                                        <gestureRecognizers/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.88698630140000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.71764705880000002" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="g7r-Of-xpP" firstAttribute="top" secondItem="UD5-VO-er2" secondAttribute="top" constant="60" id="8Ce-Vs-rX5"/>
+                                    <constraint firstItem="g7r-Of-xpP" firstAttribute="centerX" secondItem="UD5-VO-er2" secondAttribute="centerX" id="FmS-Ia-Lj3"/>
+                                    <constraint firstItem="g7r-Of-xpP" firstAttribute="leading" secondItem="UD5-VO-er2" secondAttribute="leading" constant="28" id="fg6-9t-F0z"/>
+                                    <constraint firstAttribute="bottom" secondItem="g7r-Of-xpP" secondAttribute="bottom" constant="34" id="qMf-Oq-Jtw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hP-SD-Ghh">
+                                <rect key="frame" x="0.0" y="592" width="375" height="75"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.42352941179999998" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="viV-FM-zIX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6d-vH-dMe">
+                                <rect key="frame" x="121" y="452" width="132" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="wFE-ng-iby"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addUsernameTapped:" destination="hlB-fe-9NA" eventType="touchUpInside" id="2dZ-F8-ioA"/>
+                                    <action selector="uploadUserImage:" destination="pWI-X8-wkx" eventType="touchUpInside" id="1as-TR-doX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your profile image will be displayed when you make a post and when users view your profile." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5of-5s-0gS">
+                                <rect key="frame" x="27" y="182" width="321" height="73"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="vop-mb-AJc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="Ebb-ZF-FuJ" customClass="CircleView" customModule="SocialMedia" customModuleProvider="target">
+                                <rect key="frame" x="123" y="281" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="EVQ-ot-tRg" appends="YES" id="40c-mL-FeK"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81176470590000005" green="0.84705882349999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="5of-5s-0gS" firstAttribute="top" secondItem="UD5-VO-er2" secondAttribute="bottom" constant="60" id="2z8-27-ArC"/>
+                            <constraint firstItem="8hP-SD-Ghh" firstAttribute="bottom" secondItem="lsk-Rx-Oqf" secondAttribute="top" id="6jU-FX-D7Z"/>
+                            <constraint firstItem="5of-5s-0gS" firstAttribute="leading" secondItem="AUu-Pa-dzs" secondAttribute="leadingMargin" constant="11" id="7fK-BW-gb1"/>
+                            <constraint firstItem="UD5-VO-er2" firstAttribute="leading" secondItem="AUu-Pa-dzs" secondAttribute="leading" id="9wJ-Q0-zJr"/>
+                            <constraint firstItem="8hP-SD-Ghh" firstAttribute="top" secondItem="h6d-vH-dMe" secondAttribute="bottom" constant="92" id="AIN-gN-Dfl"/>
+                            <constraint firstItem="lsk-Rx-Oqf" firstAttribute="top" secondItem="UD5-VO-er2" secondAttribute="bottom" constant="545" id="D6q-LO-Bqo"/>
+                            <constraint firstItem="UD5-VO-er2" firstAttribute="top" secondItem="AUu-Pa-dzs" secondAttribute="top" id="Sre-zH-4Ze"/>
+                            <constraint firstItem="5of-5s-0gS" firstAttribute="centerX" secondItem="UD5-VO-er2" secondAttribute="centerX" id="VUO-9I-m13"/>
+                            <constraint firstAttribute="trailing" secondItem="UD5-VO-er2" secondAttribute="trailing" id="b9t-jB-54V"/>
+                            <constraint firstItem="h6d-vH-dMe" firstAttribute="centerX" secondItem="8hP-SD-Ghh" secondAttribute="centerX" id="m7q-Dv-cRX"/>
+                            <constraint firstItem="8hP-SD-Ghh" firstAttribute="leading" secondItem="UD5-VO-er2" secondAttribute="leading" id="vwQ-SR-6NK"/>
+                            <constraint firstItem="8hP-SD-Ghh" firstAttribute="trailing" secondItem="UD5-VO-er2" secondAttribute="trailing" id="zP9-be-OQp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userImage" destination="Ebb-ZF-FuJ" id="w8J-b7-SEZ"/>
+                        <segue destination="oFx-xv-9Fr" kind="show" identifier="feedFromImage" id="xiT-bK-qDo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qpH-gU-Ftu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="EVQ-ot-tRg">
+                    <connections>
+                        <action selector="addUserImage:" destination="pWI-X8-wkx" id="ZAk-e8-jlO"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1204" y="-600.44977511244383"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="nOB-Bh-xZe">
@@ -479,7 +581,7 @@
                         <outlet property="captionField" destination="Wqd-qg-bxI" id="NCX-ti-Zys"/>
                         <outlet property="imageAdd" destination="B2D-dw-t2g" id="huY-6b-b7t"/>
                         <outlet property="tableView" destination="xeF-V1-NAW" id="rHB-jA-EVR"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="backToSignIn" id="DYI-Ll-yKl"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="DYI-Ll-yKl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xYm-NM-dGc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -503,6 +605,6 @@
         <image name="sign-out" width="92" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oVh-h8-tNx"/>
+        <segue reference="xiT-bK-qDo"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -19,6 +19,7 @@
 		CF19D1061E75D26900003FB2 /* FancyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1051E75D26900003FB2 /* FancyField.swift */; };
 		CF19D1081E75D39800003FB2 /* FancyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF19D1071E75D39800003FB2 /* FancyButton.swift */; };
 		CF2F1F061E780278006EE222 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2F1F051E780278006EE222 /* FeedVC.swift */; };
+		CF3AA3801E97EEF50014D220 /* addUserImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3AA37F1E97EEF50014D220 /* addUserImageVC.swift */; };
 		CF41E57A1E7432DA0045CEB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */; };
 		CF41E57C1E7432DB0045CEB6 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */; };
 		CF41E5811E7432DB0045CEB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF41E5801E7432DB0045CEB6 /* Assets.xcassets */; };
@@ -71,6 +72,7 @@
 		CF19D1071E75D39800003FB2 /* FancyButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyButton.swift; sourceTree = "<group>"; };
 		CF19D10C1E76256300003FB2 /* SocialMedia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SocialMedia.entitlements; sourceTree = "<group>"; };
 		CF2F1F051E780278006EE222 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; wrapsLines = 0; };
+		CF3AA37F1E97EEF50014D220 /* addUserImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addUserImageVC.swift; sourceTree = "<group>"; };
 		CF41E5761E7432DA0045CEB6 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF41E5791E7432DA0045CEB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				CFCA3FF81E82EE9600EB0CBD /* usernameVC.swift */,
 				CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */,
 				CF2F1F051E780278006EE222 /* FeedVC.swift */,
+				CF3AA37F1E97EEF50014D220 /* addUserImageVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				CF0C25AE1E795EE200607BAA /* CircleBtn.swift in Sources */,
 				CF03BB8B1E7892A600384D0C /* CircleView.swift in Sources */,
 				CF19D1061E75D26900003FB2 /* FancyField.swift in Sources */,
+				CF3AA3801E97EEF50014D220 /* addUserImageVC.swift in Sources */,
 				CF08D23D1E7A0B1D00075FE6 /* DataService.swift in Sources */,
 				CF1192D51E7B42AF000181F8 /* Post.swift in Sources */,
 				CF41E57C1E7432DB0045CEB6 /* SignInVC.swift in Sources */,
