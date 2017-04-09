@@ -31,7 +31,7 @@ class PostCell: UITableViewCell {
         likeImage.isUserInteractionEnabled = true
     }
 
-    func configureCell(post: Post, img: UIImage? = nil) {
+    func configureCell(post: Post, img: UIImage? = nil, profileImg: UIImage? = nil) {
         self.post = post
         likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
         self.caption.text = post.caption
@@ -46,7 +46,6 @@ class PostCell: UITableViewCell {
                 if error != nil {
                     print("TREVOR: Unable to download image from Firebase storage")
                 } else {
-                    print("TREVOR: Image downloaded from Firebase storage")
                     if let imgData = data {
                         if let img = UIImage(data: imgData) {
                             self.postImg.image = img
@@ -56,6 +55,25 @@ class PostCell: UITableViewCell {
                 }
             })
         }
+        
+        if profileImg != nil {
+            self.profileImg.image = profileImg
+        } else {
+            let reference = FIRStorage.storage().reference(forURL: post.posterImage as String)
+            reference.data(withMaxSize: 2 * 1024 * 1024, completion: { (data, error) in
+                if error != nil {
+                    print("TREVOR: Unable to download image from Firebase storage")
+                } else {
+                    if let imgData = data {
+                        if let img = UIImage(data: imgData) {
+                            self.profileImg.image = img
+                            FeedVC.imageCache.setObject(img, forKey: post.posterImage as NSString)
+                        }
+                    }
+                }
+            })
+        }
+        
         
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {

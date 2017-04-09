@@ -83,7 +83,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
             if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
-                cell.configureCell(post: post, img: img)
+                let profileImage = FeedVC.imageCache.object(forKey: post.posterImage as NSString)
+                cell.configureCell(post: post, img: img, profileImg: profileImage)
                 return cell
             } else {
                 cell.configureCell(post: post)
@@ -114,6 +115,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }
+    
+    
+    //MARK: Posting
     
     //Post button tapped to create post
     
