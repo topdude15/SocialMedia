@@ -197,13 +197,17 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         "imageUrl": imgUrl as AnyObject,
                         "likes": 0 as AnyObject,
                         "postedBy": username as AnyObject,
-                        "posterImage": posterImage as AnyObject
+                        "posterImage": posterImage as AnyObject,
+                        "posterUid": uid as AnyObject
                     ]
                     
                     let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
+                    print("THIS IS COOL \(firebasePost)")
                     firebasePost.setValue(post)
                     
-                    
+//                    let user = DataService.ds.REF_USERS.child(uid!)
+//                    let userPost =
+//                    user.updateChildValues()
                     
                     self.captionField.text = ""
                     self.imageSelected = false

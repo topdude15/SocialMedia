@@ -35,7 +35,7 @@ class SignInVC: UIViewController {
         
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
-                print("TREVOR: Unable to authenticate with Facebook -\(String(describing: error))")
+                print("Unable to authenticate with Facebook -\(String(describing: error))")
                 let message = "Verify your Facebook credentials are correct and try again"
                 let alertController = UIAlertController(
                     title: "Unable to log in with Facebook", // This gets overridden below.
@@ -47,7 +47,7 @@ class SignInVC: UIViewController {
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true)
             } else if result?.isCancelled == true {
-                print("TREVOR: User cancelled Facebook authentication")
+                print("User cancelled Facebook authentication")
                 let message = "Please allow Streak to use your Facebook credentials and try again"
                 let alertController = UIAlertController(
                     title: "Facebook login cancelled", // This gets overridden below.

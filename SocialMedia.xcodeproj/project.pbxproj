@@ -29,6 +29,7 @@
 		CF41E5A81E7432E70045CEB6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CF41E5A71E7432E70045CEB6 /* GoogleService-Info.plist */; };
 		CFCA3FF91E82EE9600EB0CBD /* usernameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA3FF81E82EE9600EB0CBD /* usernameVC.swift */; };
 		CFCA3FFB1E82FC7600EB0CBD /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCA3FFA1E82FC7600EB0CBD /* Classes.swift */; };
+		CFDE6D221E9BC6F1002C00E1 /* userProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDE6D211E9BC6F1002C00E1 /* userProfileVC.swift */; };
 		CFECBC271E915347006EB464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFECBC251E915347006EB464 /* Main.storyboard */; };
 		D2190D6FCD9CF7880A0A4E56 /* Pods_SocialMediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D4324BE081DE5D7E326D1A /* Pods_SocialMediaTests.framework */; };
 		E105E6E484BC6450B7929BFA /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D25B00C9E388684729482C7 /* Pods_SocialMedia.framework */; };
@@ -88,6 +89,7 @@
 		CF41E5A71E7432E70045CEB6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFCA3FF81E82EE9600EB0CBD /* usernameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = usernameVC.swift; sourceTree = "<group>"; };
 		CFCA3FFA1E82FC7600EB0CBD /* Classes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
+		CFDE6D211E9BC6F1002C00E1 /* userProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userProfileVC.swift; sourceTree = "<group>"; };
 		CFECBC261E915347006EB464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F00F62964E19E49AA9885E13 /* Pods-SocialMediaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMediaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMediaUITests/Pods-SocialMediaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +182,7 @@
 				CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */,
 				CF2F1F051E780278006EE222 /* FeedVC.swift */,
 				CF3AA37F1E97EEF50014D220 /* addUserImageVC.swift */,
+				CFDE6D211E9BC6F1002C00E1 /* userProfileVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -546,6 +549,7 @@
 				CF03BB8B1E7892A600384D0C /* CircleView.swift in Sources */,
 				CF19D1061E75D26900003FB2 /* FancyField.swift in Sources */,
 				CF3AA3801E97EEF50014D220 /* addUserImageVC.swift in Sources */,
+				CFDE6D221E9BC6F1002C00E1 /* userProfileVC.swift in Sources */,
 				CF08D23D1E7A0B1D00075FE6 /* DataService.swift in Sources */,
 				CF1192D51E7B42AF000181F8 /* Post.swift in Sources */,
 				CF41E57C1E7432DB0045CEB6 /* SignInVC.swift in Sources */,
