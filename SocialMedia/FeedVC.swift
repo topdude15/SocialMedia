@@ -172,6 +172,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             }
         }
     }
+
+    @IBAction func goToProfile(_ sender: Any) {
+        performSegue(withIdentifier: "toProfile", sender: nil)
+    }
     
     //MARK: Actual post data
     func postToFirebase(imgUrl: String) {
@@ -198,6 +202,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     
                     let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
                     firebasePost.setValue(post)
+                    
+                    
                     
                     self.captionField.text = ""
                     self.imageSelected = false
