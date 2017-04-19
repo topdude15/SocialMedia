@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import SwiftKeychainWrapper
 
 class userProfileVC: UIViewController {
 
@@ -21,6 +23,21 @@ class userProfileVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func followUser(_ sender: Any) {
+//        func likeTapped(sender: UITapGestureRecognizer) {
+//            likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+//                if let _ = snapshot.value as? NSNull {
+//                    self.likeImage.image = UIImage(named: "filled-heart")
+//                    self.post.adjustLikes(addLike: true)
+//                    self.likesRef.setValue(true)
+//                } else {
+//                    self.likeImage.image = UIImage(named: "empty-heart")
+//                    self.post.adjustLikes(addLike: false)
+//                    self.likesRef.removeValue()
+//                }
+//            })
+//        }
+    }
 
     /*
     // MARK: - Navigation

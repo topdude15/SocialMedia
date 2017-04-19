@@ -9,8 +9,7 @@
 import UIKit
 import SwiftKeychainWrapper
 import Firebase
-import FirebaseDatabase
-
+import GoogleMobileAds
 
 class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -18,6 +17,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var imageAdd: CircleView!
     @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var likeImage: UIImageView!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     var posts = [Post]()
     var imagePicker: UIImagePickerController!
@@ -40,6 +40,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         imagePicker = UIImagePickerController()
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
+        
+        bannerView.adUnitID = "ca-app-pub-5037421204400284/1777248857"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             
@@ -179,9 +183,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     
     //MARK: Actual post data
     func postToFirebase(imgUrl: String) {
-        
-        FIRAuth.auth()?.signIn(withEmail: UserName.sharedInstance.email, password: UserName.sharedInstance.password, completion: { (user, error) in
-            if error == nil {
+
             let uid = FIRAuth.auth()?.currentUser?.uid
 
             FIRDatabase.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -216,8 +218,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     self.tableView.reloadData()
                     }
                 })
-            }
-        })
+        }
         
     }
-}
+
