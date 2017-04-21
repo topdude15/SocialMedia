@@ -20,6 +20,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     @IBOutlet weak var bannerView: GADBannerView!
     
     var posts = [Post]()
+    var allowedToPost = true
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
@@ -126,7 +127,19 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     //Post button tapped to create post
     
     @IBAction func postButtonTapped(_ sender: Any) {
-        
+        if (allowedToPost == false) {
+            let message = "Please wait a few seconds in between posts to reduce post spamming"
+            let alertController = UIAlertController(
+                title: "Please wait in between posts", // This gets overridden below.
+                message: message,
+                preferredStyle: .alert
+            )
+            let okAction = UIAlertAction(title: "OK", style: .cancel) { _ -> Void in
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true)
+        }
+        allowedToPost = false
         guard let caption = captionField.text, caption != "" else {
             print("TREVOR: Caption must be entered")
             let message = "Please enter a caption to continue"
@@ -177,8 +190,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         }
     }
 
-    @IBAction func goToProfile(_ sender: Any) {
-        performSegue(withIdentifier: "toProfile", sender: nil)
+
+    @IBAction func goToSettings(_ sender: Any) {
+        performSegue(withIdentifier: "toSettings", sender: nil)
     }
     
     //MARK: Actual post data
@@ -203,6 +217,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         "posterUid": uid as AnyObject
                     ]
                     
+                    self.captionField.text = ""
+                    self.imageSelected = false
+                    self.imageAdd.image = UIImage(named: "add-image")
+                    
                     let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
                     print("THIS IS COOL \(firebasePost)")
                     firebasePost.setValue(post)
@@ -210,12 +228,10 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
 //                    let user = DataService.ds.REF_USERS.child(uid!)
 //                    let userPost =
 //                    user.updateChildValues()
-                    
-                    self.captionField.text = ""
-                    self.imageSelected = false
-                    self.imageAdd.image = UIImage(named: "add-image")
+
                     
                     self.tableView.reloadData()
+                    self.allowedToPost = true
                     }
                 })
         }

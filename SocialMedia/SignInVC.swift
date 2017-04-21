@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import FBSDKCoreKit
+import FBSDKCoreKit
 //import FBSDKLoginKit
 import Firebase
 import SwiftKeychainWrapper
@@ -178,6 +178,9 @@ class SignInVC: UIViewController {
                 }
             })
         }
+    }
+    @IBAction func toTermsTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toTerms", sender: nil)
     }
     
     //Finishes logging user in and sends them to the feed

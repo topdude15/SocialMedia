@@ -16,4 +16,10 @@ class UserName {
     var password: String!
     
 }
+class userProfileUid {
+    static var sharedInstance = userProfileUid()
+    private init() { }
+    
+    var profileUid: String!
+}
 let defaults = UserDefaults.standard

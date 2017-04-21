@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import Firebase
 
 class PostCell: UITableViewCell {
@@ -22,9 +23,19 @@ class PostCell: UITableViewCell {
     
     var likesRef: FIRDatabaseReference!
     
+    var userProfile = "USER"
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        //Sets up Tap Gesture Recognizer on the username label to take user to post page
+        usernameLabe.isUserInteractionEnabled = true
+        let tapped = UITapGestureRecognizer(target: self, action:#selector(getPost))
+        tapped.numberOfTapsRequired = 1
+        usernameLabe.addGestureRecognizer(tapped)
+        
+        //Sets up Tap Gesture Recognizer on the like image to like posts
         let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
         tap.numberOfTapsRequired = 1
         likeImage.addGestureRecognizer(tap)
@@ -37,6 +48,7 @@ class PostCell: UITableViewCell {
         self.caption.text = post.caption
         self.likesLabel.text = "\(post.likes)"
         self.usernameLabe.text = post.postedBy
+        userProfile = post.posterUid
         
         if img != nil {
             self.postImg.image = img
@@ -77,9 +89,9 @@ class PostCell: UITableViewCell {
         
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
-                self.likeImage.image = UIImage(named: "empty-heart")
+                self.likeImage.image = UIImage(named: "not-liked")
             } else {
-                self.likeImage.image = UIImage(named: "filled-heart")
+                self.likeImage.image = UIImage(named: "liked")
             }
         })
         
@@ -87,15 +99,19 @@ class PostCell: UITableViewCell {
     func likeTapped(sender: UITapGestureRecognizer) {
         likesRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let _ = snapshot.value as? NSNull {
-                self.likeImage.image = UIImage(named: "filled-heart")
+                self.likeImage.image = UIImage(named: "liked")
                 self.post.adjustLikes(addLike: true)
                 self.likesRef.setValue(true)
             } else {
-                self.likeImage.image = UIImage(named: "empty-heart")
+                self.likeImage.image = UIImage(named: "not-liked")
                 self.post.adjustLikes(addLike: false)
                 self.likesRef.removeValue()
             }
         })
+    }
+    func getPost(sender: UITapGestureRecognizer) {
+       userProfileUid.sharedInstance.profileUid = userProfile
+        performSegue(withIdentifier: "toProfile", sender: nil)
     }
     
 }
