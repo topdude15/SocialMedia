@@ -24,12 +24,16 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
+    var postID = ""
     
     @IBAction func getUid(_ sender: Any) {
         let user = DataService.ds.REF_USER_CURRENT
         print(user)
     }
-
+    func goToProfile() {
+        
+        performSegue(withIdentifier: "toProfilePage", sender: PostCell())
+    }
     
     override func viewDidLoad() {
         
@@ -57,7 +61,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                         let key = snap.key
                         let post = Post(postKey: key, postData: postDict)
                         self.posts.append(post)
-
                     }
                     
                 }
@@ -85,8 +88,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         
         let post = posts[indexPath.row]
         
+        postID = post.postKey
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
+            
+            cell.usernameLabe.isUserInteractionEnabled = true
+            let tap = UITapGestureRecognizer(target: self, action:#selector(goToProfile))
+            tap.numberOfTapsRequired = 1
+            cell.usernameLabe.addGestureRecognizer(tap)
+            
+            cell.postSettings.isUserInteractionEnabled = true
+            let tapped = UITapGestureRecognizer(target: self, action:#selector(postSettings))
+            tapped.numberOfTapsRequired = 1
+            cell.postSettings.addGestureRecognizer(tapped)
+    
+
             if let img = FeedVC.imageCache.object(forKey: post.imageUrl as NSString) {
                 let profileImage = FeedVC.imageCache.object(forKey: post.posterImage as NSString)
                 cell.configureCell(post: post, img: img, profileImg: profileImage)
@@ -224,17 +241,53 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
                     print("THIS IS COOL \(firebasePost)")
                     firebasePost.setValue(post)
-                    
-//                    let user = DataService.ds.REF_USERS.child(uid!)
-//                    let userPost =
-//                    user.updateChildValues()
-
-                    
+       
                     self.tableView.reloadData()
                     self.allowedToPost = true
                     }
                 })
         }
-        
+    func postSettings() {
+        let alert = UIAlertController(title: "Post Settings", message: "", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Report post", style: .default, handler: { (action) -> Void in
+            print("TREVOR: \(self.postID)")
+            FIRDatabase.database().reference().child("posts").child(self.postID).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    let caption = dictionary["caption"]
+                    let imageUrl = dictionary["imageUrl"]
+                    let likes = dictionary["likes"]
+                    let postedBy = dictionary["postedBy"]
+                    let posterImage = dictionary["posterImage"]
+                    let posterUid = dictionary["posterUid"]
+                    
+                    let post: Dictionary<String, AnyObject> = [
+                        "caption": caption!,
+                        "imageUrl": imageUrl!,
+                        "likes": likes!,
+                        "postedBy": postedBy!,
+                        "posterImage": posterImage!,
+                        "posterUid": posterUid!
+                    ]
+                    
+                    let firebasePost = FIRDatabase.database().reference().child("reportedPosts").child(self.postID)
+                    firebasePost.setValue(post)
+                    
+                    let originalPost = FIRDatabase.database().reference().child("posts").child(self.postID)
+                    originalPost.setValue(nil)
+                    
+                    self.tableView.reloadData()
+                }
+            })
+        })
+        let action2 = UIAlertAction(title: "Action 2", style: .default, handler: { (action) -> Void in
+            print("ACTION 2 selected!")
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
+        alert.addAction(action1)
+        alert.addAction(action2)
+        alert.addAction(cancel)
+        self.present(alert, animated: true)
+        self.tableView.reloadData()
     }
 
+}

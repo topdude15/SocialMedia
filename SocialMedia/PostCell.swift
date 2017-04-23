@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import Firebase
 
-class PostCell: UITableViewCell {
+class PostCell:  UITableViewCell {
     
     @IBOutlet weak var profileImg: CircleView!
     @IBOutlet weak var usernameLabe: UILabel!
@@ -18,22 +18,18 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var likeImage: UIImageView!
+    @IBOutlet weak var postSettings: UIImageView!
     
     var post: Post!
     
     var likesRef: FIRDatabaseReference!
     
-    var userProfile = "USER"
 
+    var postID: String = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        //Sets up Tap Gesture Recognizer on the username label to take user to post page
-        usernameLabe.isUserInteractionEnabled = true
-        let tapped = UITapGestureRecognizer(target: self, action:#selector(getPost))
-        tapped.numberOfTapsRequired = 1
-        usernameLabe.addGestureRecognizer(tapped)
         
         //Sets up Tap Gesture Recognizer on the like image to like posts
         let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
@@ -45,10 +41,11 @@ class PostCell: UITableViewCell {
     func configureCell(post: Post, img: UIImage? = nil, profileImg: UIImage? = nil) {
         self.post = post
         likesRef = DataService.ds.REF_USER_CURRENT.child("likes").child(post.postKey)
+        postID = post.postKey
         self.caption.text = post.caption
         self.likesLabel.text = "\(post.likes)"
         self.usernameLabe.text = post.postedBy
-        userProfile = post.posterUid
+        userProfileUid.sharedInstance.profileUid = post.posterUid
         
         if img != nil {
             self.postImg.image = img
@@ -109,9 +106,4 @@ class PostCell: UITableViewCell {
             }
         })
     }
-    func getPost(sender: UITapGestureRecognizer) {
-       userProfileUid.sharedInstance.profileUid = userProfile
-        performSegue(withIdentifier: "toProfile", sender: nil)
-    }
-    
 }
