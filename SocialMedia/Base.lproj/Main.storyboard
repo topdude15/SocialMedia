@@ -186,7 +186,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgx-jq-Thv">
                                 <rect key="frame" x="16" y="152" width="343" height="410"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Terms and Conditions:
+                                <string key="text">Terms and Conditions:
  1. You must be at least 13 years old to use the Service.
  2. You may not post violent, nude, partially nude, discriminatory, unlawful, infringing, hateful, pornographic or sexually suggestive photos or other content via the Service. 
 3. Users are solely responsible for any images, text or other content that is posted within the Service
@@ -194,7 +194,7 @@
 5. We reserve the right to revoke user post or accounts at any time without user consent if the user has failed to comply with the explicitly stated Terms and Conditions
 
 Failure to comply with these rules will result in being removed or banned from the Vybe App 
-By Pressing ‘Agree and Continue’, you agree to have read and comply with the above Terms and Conditions. </mutableString>
+By Pressing ‘Agree and Continue’, you agree to have read and comply with the above Terms and Conditions. </string>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
