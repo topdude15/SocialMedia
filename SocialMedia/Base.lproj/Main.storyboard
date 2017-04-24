@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="tzd-HP-krN">
-                                <rect key="frame" x="46" y="209" width="283" height="135"/>
+                                <rect key="frame" x="46" y="225" width="283" height="135"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAi-Y6-WV3" customClass="FancyField" customModule="SocialMedia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="283" height="24"/>
@@ -111,43 +111,24 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By using this service, you agree to have read and agree with the " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOe-Cr-ILK">
-                                <rect key="frame" x="31" y="486" width="313" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmU-Zw-pRz">
-                                <rect key="frame" x="61" y="519" width="253" height="30"/>
-                                <state key="normal" title="terms and conditions."/>
-                                <connections>
-                                    <action selector="toTermsTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ha7-EU-Mfe"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EYg-xB-XtB" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2Yo-vv-yeg"/>
                             <constraint firstItem="tzd-HP-krN" firstAttribute="top" secondItem="U3p-1B-K3x" secondAttribute="bottom" constant="50" id="6YV-es-VVb"/>
-                            <constraint firstItem="GnH-3L-JRo" firstAttribute="top" secondItem="eOe-Cr-ILK" secondAttribute="bottom" constant="65" id="Gma-hU-hSw"/>
                             <constraint firstItem="U3p-1B-K3x" firstAttribute="top" secondItem="EYg-xB-XtB" secondAttribute="bottom" constant="50" id="HO9-XD-dN9"/>
                             <constraint firstAttribute="trailing" secondItem="GnH-3L-JRo" secondAttribute="trailing" id="KyL-7N-ygL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OmU-Zw-pRz" secondAttribute="trailing" constant="45" id="Q1J-dJ-xOy"/>
-                            <constraint firstItem="tzd-HP-krN" firstAttribute="top" secondItem="U3p-1B-K3x" secondAttribute="bottom" constant="-115" id="SIo-LW-k0B"/>
+                            <constraint firstItem="tzd-HP-krN" firstAttribute="top" secondItem="U3p-1B-K3x" secondAttribute="bottom" constant="-99" id="SIo-LW-k0B"/>
                             <constraint firstItem="GnH-3L-JRo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WfC-fR-9xG"/>
                             <constraint firstItem="U3p-1B-K3x" firstAttribute="top" relation="lessThanOrEqual" secondItem="EYg-xB-XtB" secondAttribute="bottom" constant="50" id="YHk-dR-1cA"/>
                             <constraint firstAttribute="trailing" secondItem="1dp-Gr-DFp" secondAttribute="trailing" id="YO6-5R-mDf"/>
                             <constraint firstItem="U3p-1B-K3x" firstAttribute="centerX" secondItem="EYg-xB-XtB" secondAttribute="centerX" id="YiQ-hI-VHP"/>
                             <constraint firstItem="1dp-Gr-DFp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aDm-kb-1uF"/>
-                            <constraint firstItem="eOe-Cr-ILK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="aWV-52-1Ov"/>
                             <constraint firstItem="tzd-HP-krN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="f4I-lV-mfP"/>
                             <constraint firstItem="tzd-HP-krN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="gGn-Yd-PZr"/>
                             <constraint firstItem="EYg-xB-XtB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gT4-PB-ENb"/>
-                            <constraint firstItem="OmU-Zw-pRz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="kVe-XO-kBw"/>
                             <constraint firstItem="U3p-1B-K3x" firstAttribute="top" secondItem="EYg-xB-XtB" secondAttribute="bottom" constant="40" id="o5K-jN-mSE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GnH-3L-JRo" secondAttribute="bottom" id="p4Q-aF-RFP"/>
-                            <constraint firstItem="GnH-3L-JRo" firstAttribute="top" secondItem="OmU-Zw-pRz" secondAttribute="bottom" constant="43" id="qvD-AN-8FF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eOe-Cr-ILK" secondAttribute="trailing" constant="15" id="rrm-ac-rbh"/>
                             <constraint firstItem="EYg-xB-XtB" firstAttribute="top" secondItem="1dp-Gr-DFp" secondAttribute="bottom" constant="8" id="seT-6F-iV8"/>
                             <constraint firstItem="1dp-Gr-DFp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ssx-N8-htr"/>
                             <constraint firstAttribute="bottom" secondItem="1dp-Gr-DFp" secondAttribute="bottom" constant="545" id="yz1-aJ-gVs"/>
@@ -165,13 +146,12 @@
                         <outlet property="emailField" destination="OAi-Y6-WV3" id="o2k-Td-7zT"/>
                         <outlet property="pwdField" destination="RHE-mv-gt1" id="Jzt-pp-aml"/>
                         <segue destination="oFx-xv-9Fr" kind="show" identifier="goToFeed" id="GwO-tx-8qE"/>
-                        <segue destination="hlB-fe-9NA" kind="show" identifier="goToUsername" id="R3q-pe-MZF"/>
                         <segue destination="yAd-7J-12S" kind="show" identifier="toTerms" id="rhC-FA-OAO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-434.39999999999998" y="133.5832083958021"/>
+            <point key="canvasLocation" x="-721" y="134"/>
         </scene>
         <!--TermsVC-->
         <scene sceneID="Y2w-Ya-vM3">
@@ -204,16 +184,17 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgx-jq-Thv">
-                                <rect key="frame" x="16" y="152" width="343" height="390"/>
+                                <rect key="frame" x="16" y="152" width="343" height="410"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Terms and Conditions:
+                                <mutableString key="text">Terms and Conditions:
  1. You must be at least 13 years old to use the Service.
  2. You may not post violent, nude, partially nude, discriminatory, unlawful, infringing, hateful, pornographic or sexually suggestive photos or other content via the Service. 
 3. Users are solely responsible for any images, text or other content that is posted within the Service
 4. Vybe may not be used for any illegal or illict purpose
 5. We reserve the right to revoke user post or accounts at any time without user consent if the user has failed to comply with the explicitly stated Terms and Conditions
 
-Failure to comply with these rules will result in being removed or banned from the Vybe App </string>
+Failure to comply with these rules will result in being removed or banned from the Vybe App 
+By Pressing ‘Agree and Continue’, you agree to have read and comply with the above Terms and Conditions. </mutableString>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -223,7 +204,7 @@ Failure to comply with these rules will result in being removed or banned from t
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPz-sn-OWR">
                                         <rect key="frame" x="25" y="15" width="324" height="45"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="23"/>
-                                        <state key="normal" title="Agree and return to login">
+                                        <state key="normal" title="Agree and Continue">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -247,7 +228,7 @@ Failure to comply with these rules will result in being removed or banned from t
                             <constraint firstItem="9c4-Uk-jY4" firstAttribute="trailing" secondItem="G3z-fx-mfe" secondAttribute="trailing" id="DYn-Sw-JwX"/>
                             <constraint firstItem="dgx-jq-Thv" firstAttribute="top" secondItem="G3z-fx-mfe" secondAttribute="bottom" constant="30" id="I9w-lq-L7j"/>
                             <constraint firstItem="9OC-eE-3oc" firstAttribute="top" secondItem="G3z-fx-mfe" secondAttribute="bottom" constant="545" id="XeS-2F-tfm"/>
-                            <constraint firstItem="9c4-Uk-jY4" firstAttribute="top" secondItem="dgx-jq-Thv" secondAttribute="bottom" constant="50" id="eWV-IR-A5d"/>
+                            <constraint firstItem="9c4-Uk-jY4" firstAttribute="top" secondItem="dgx-jq-Thv" secondAttribute="bottom" constant="30" id="eWV-IR-A5d"/>
                             <constraint firstItem="9c4-Uk-jY4" firstAttribute="centerX" secondItem="dgx-jq-Thv" secondAttribute="centerX" id="kQz-Hz-eTn"/>
                             <constraint firstItem="G3z-fx-mfe" firstAttribute="top" secondItem="EyB-PK-urM" secondAttribute="top" id="lPw-jT-Zct"/>
                             <constraint firstAttribute="trailing" secondItem="G3z-fx-mfe" secondAttribute="trailing" id="mF2-W4-5EI"/>
@@ -257,12 +238,12 @@ Failure to comply with these rules will result in being removed or banned from t
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginFromTerms" id="dVH-xP-jUR"/>
+                        <segue destination="hlB-fe-9NA" kind="show" identifier="usernameFromTerms" id="dBp-d0-oop"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lqy-ww-ng9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-434.39999999999998" y="-600.44977511244383"/>
+            <point key="canvasLocation" x="-722" y="-646"/>
         </scene>
         <!--UsernameVC-->
         <scene sceneID="idg-MH-a6T">
@@ -358,13 +339,12 @@ Failure to comply with these rules will result in being removed or banned from t
                     </view>
                     <connections>
                         <outlet property="usernameBox" destination="d8C-n3-XrQ" id="PUi-3W-Sli"/>
-                        <segue destination="oFx-xv-9Fr" kind="show" identifier="feedFromUsername" id="oVh-h8-tNx"/>
                         <segue destination="pWI-X8-wkx" kind="show" identifier="addUserImage" id="mRm-zL-fjl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk1-bi-ZUo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="312.80000000000001" y="-600.44977511244383"/>
+            <point key="canvasLocation" x="313" y="-646"/>
         </scene>
         <!--Add User ImageVC-->
         <scene sceneID="sVh-Iu-q6j">
@@ -471,7 +451,7 @@ Failure to comply with these rules will result in being removed or banned from t
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1036" y="-600.44977511244383"/>
+            <point key="canvasLocation" x="1369" y="-646"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="nOB-Bh-xZe">
@@ -516,10 +496,10 @@ Failure to comply with these rules will result in being removed or banned from t
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="akL-2v-Ezd" customClass="FancyView" customModule="SocialMedia" customModuleProvider="target">
-                                <rect key="frame" x="16" y="72" width="343" height="66"/>
+                                <rect key="frame" x="8" y="72" width="358" height="66"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EhS-N8-lgW">
-                                        <rect key="frame" x="8" y="8" width="327" height="50"/>
+                                        <rect key="frame" x="8" y="8" width="342" height="50"/>
                                         <subviews>
                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-dw-t2g" customClass="CircleView" customModule="SocialMedia" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="50"/>
@@ -533,7 +513,7 @@ Failure to comply with these rules will result in being removed or banned from t
                                                 </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wqd-qg-bxI" customClass="FancyField" customModule="SocialMedia" customModuleProvider="target">
-                                                <rect key="frame" x="59" y="0.0" width="209" height="50"/>
+                                                <rect key="frame" x="59" y="0.0" width="224" height="50"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -543,7 +523,7 @@ Failure to comply with these rules will result in being removed or banned from t
                                                 </connections>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6X-oi-3Fw" customClass="CircleBtn" customModule="SocialMedia" customModuleProvider="target">
-                                                <rect key="frame" x="278" y="0.0" width="49" height="50"/>
+                                                <rect key="frame" x="293" y="0.0" width="49" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.4392156862745098" blue="0.2627450980392157" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="add-post"/>
                                                 <connections>
@@ -566,8 +546,16 @@ Failure to comply with these rules will result in being removed or banned from t
                                     <constraint firstItem="EhS-N8-lgW" firstAttribute="top" secondItem="akL-2v-Ezd" secondAttribute="topMargin" id="akL-VB-caK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-ny-PBg" customClass="GADBannerView">
+                                <rect key="frame" x="27" y="617" width="320" height="50"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="bMI-FL-lbY"/>
+                                    <constraint firstAttribute="height" constant="50" id="rqf-YP-WGL"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="487" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xeF-V1-NAW">
-                                <rect key="frame" x="0.0" y="154" width="375" height="463"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="463"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="463" id="fwv-zR-dRp"/>
@@ -581,10 +569,10 @@ Failure to comply with these rules will result in being removed or banned from t
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwf-sx-om3" customClass="FancyView" customModule="SocialMedia" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="342" height="471"/>
+                                                    <rect key="frame" x="8" y="8" width="358" height="471"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tBp-Mk-Qto">
-                                                            <rect key="frame" x="221.5" y="441.5" width="80.5" height="20.5"/>
+                                                            <rect key="frame" x="237.5" y="441.5" width="80.5" height="20.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrL-Ah-WVV">
                                                                     <rect key="frame" x="0.0" y="0.0" width="33.5" height="20.5"/>
@@ -601,7 +589,7 @@ Failure to comply with these rules will result in being removed or banned from t
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qqQ-sJ-gaH">
-                                                            <rect key="frame" x="10" y="5" width="322" height="60"/>
+                                                            <rect key="frame" x="10" y="5" width="338" height="60"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="WX9-sW-dPX" customClass="CircleView" customModule="SocialMedia" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -610,13 +598,13 @@ Failure to comply with these rules will result in being removed or banned from t
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROV-Ie-uLL">
-                                                                    <rect key="frame" x="68" y="0.0" width="186" height="60"/>
+                                                                    <rect key="frame" x="68" y="0.0" width="202" height="60"/>
                                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                                                     <color key="textColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="not-liked" translatesAutoresizingMaskIntoConstraints="NO" id="kbR-vB-xQ7">
-                                                                    <rect key="frame" x="262" y="0.0" width="60" height="60"/>
+                                                                    <rect key="frame" x="278" y="0.0" width="60" height="60"/>
                                                                 </imageView>
                                                             </subviews>
                                                             <constraints>
@@ -624,13 +612,13 @@ Failure to comply with these rules will result in being removed or banned from t
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wBv-Hq-1Xw">
-                                                            <rect key="frame" x="12" y="73" width="318" height="365.5"/>
+                                                            <rect key="frame" x="12" y="73" width="334" height="365.5"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-t8-JxS">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="318" height="310.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="334" height="310.5"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dAl-R8-fn4">
-                                                                    <rect key="frame" x="0.0" y="315.5" width="318" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="315.5" width="334" height="50"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="otC-vt-G8j"/>
@@ -641,7 +629,7 @@ Failure to comply with these rules will result in being removed or banned from t
                                                                 </textView>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingsicon" translatesAutoresizingMaskIntoConstraints="NO" id="9gO-Pi-PcR">
+                                                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingsicon" translatesAutoresizingMaskIntoConstraints="NO" id="9gO-Pi-PcR">
                                                             <rect key="frame" x="12" y="441" width="26" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
@@ -670,7 +658,7 @@ Failure to comply with these rules will result in being removed or banned from t
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cwf-sx-om3" firstAttribute="leading" secondItem="uJm-8U-p2i" secondAttribute="leadingMargin" constant="8" id="4Z0-yl-6Fr"/>
+                                                <constraint firstItem="cwf-sx-om3" firstAttribute="leading" secondItem="uJm-8U-p2i" secondAttribute="leadingMargin" id="4Z0-yl-6Fr"/>
                                                 <constraint firstItem="cwf-sx-om3" firstAttribute="top" secondItem="uJm-8U-p2i" secondAttribute="topMargin" id="Tql-mM-LSr"/>
                                                 <constraint firstItem="cwf-sx-om3" firstAttribute="centerX" secondItem="uJm-8U-p2i" secondAttribute="centerX" id="eup-i1-3uM"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="cwf-sx-om3" secondAttribute="bottom" id="lSe-qT-yAA"/>
@@ -689,14 +677,6 @@ Failure to comply with these rules will result in being removed or banned from t
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uJ-ny-PBg" customClass="GADBannerView">
-                                <rect key="frame" x="27" y="617" width="320" height="50"/>
-                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="bMI-FL-lbY"/>
-                                    <constraint firstAttribute="height" constant="50" id="rqf-YP-WGL"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -707,12 +687,12 @@ Failure to comply with these rules will result in being removed or banned from t
                             <constraint firstItem="7uJ-ny-PBg" firstAttribute="leading" secondItem="Any-No-WwP" secondAttribute="leadingMargin" constant="51" id="9mf-lM-zAr"/>
                             <constraint firstAttribute="trailing" secondItem="WRB-pg-Zai" secondAttribute="trailing" id="DcP-EX-WGh"/>
                             <constraint firstItem="WRB-pg-Zai" firstAttribute="centerX" secondItem="akL-2v-Ezd" secondAttribute="centerX" id="GuS-fs-ctA"/>
-                            <constraint firstItem="akL-2v-Ezd" firstAttribute="leading" secondItem="Any-No-WwP" secondAttribute="leadingMargin" id="KHK-uP-crz"/>
+                            <constraint firstItem="akL-2v-Ezd" firstAttribute="leading" secondItem="Any-No-WwP" secondAttribute="leadingMargin" constant="-8" id="KHK-uP-crz"/>
                             <constraint firstItem="WRB-pg-Zai" firstAttribute="leading" secondItem="xeF-V1-NAW" secondAttribute="leading" id="McL-JU-J4x"/>
-                            <constraint firstItem="xeF-V1-NAW" firstAttribute="top" secondItem="akL-2v-Ezd" secondAttribute="bottom" constant="16" id="OPg-8b-jt6"/>
+                            <constraint firstItem="xeF-V1-NAW" firstAttribute="top" secondItem="akL-2v-Ezd" secondAttribute="bottom" constant="8" id="OPg-8b-jt6"/>
                             <constraint firstItem="akL-2v-Ezd" firstAttribute="top" secondItem="WRB-pg-Zai" secondAttribute="bottom" constant="8" symbolic="YES" id="V4L-4b-8E6"/>
                             <constraint firstItem="WRB-pg-Zai" firstAttribute="trailing" secondItem="xeF-V1-NAW" secondAttribute="trailing" id="Vb4-8B-Qdh"/>
-                            <constraint firstItem="qLq-fV-yhX" firstAttribute="top" secondItem="xeF-V1-NAW" secondAttribute="bottom" constant="50" id="cGH-5x-RED"/>
+                            <constraint firstItem="qLq-fV-yhX" firstAttribute="top" secondItem="xeF-V1-NAW" secondAttribute="bottom" constant="58" id="cGH-5x-RED"/>
                             <constraint firstAttribute="bottom" secondItem="7uJ-ny-PBg" secondAttribute="bottom" id="hZa-LA-9QG"/>
                             <constraint firstItem="akL-2v-Ezd" firstAttribute="top" secondItem="Any-No-WwP" secondAttribute="top" constant="72" id="xV4-L1-aRu"/>
                         </constraints>
@@ -875,7 +855,7 @@ Failure to comply with these rules will result in being removed or banned from t
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="312.80000000000001" y="805.54722638680664"/>
+            <point key="canvasLocation" x="313" y="947"/>
         </scene>
         <!--Change Profile Image-->
         <scene sceneID="HVM-ke-hwE">
@@ -991,7 +971,7 @@ Failure to comply with these rules will result in being removed or banned from t
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1036" y="805.54722638680664"/>
+            <point key="canvasLocation" x="1369" y="947"/>
         </scene>
         <!--User ProfileVC-->
         <scene sceneID="xik-fJ-5bH">
@@ -1009,18 +989,21 @@ Failure to comply with these rules will result in being removed or banned from t
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rt-pH-Arc">
-                                        <rect key="frame" x="50" y="16" width="275" height="41"/>
+                                        <rect key="frame" x="50" y="20" width="275" height="37"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.88698630140000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVz-Sk-nVh">
-                                        <rect key="frame" x="8" y="16" width="41" height="31"/>
+                                        <rect key="frame" x="8" y="26" width="41" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="BA6-Fh-Z1w"/>
                                         </constraints>
                                         <state key="normal" image="sign-out"/>
+                                        <connections>
+                                            <action selector="returnToFeed:" destination="sl8-z1-PFm" eventType="touchUpInside" id="jVJ-sj-5Gw"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.39215686274509803" green="0.70980392156862748" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1028,11 +1011,11 @@ Failure to comply with these rules will result in being removed or banned from t
                                 <constraints>
                                     <constraint firstItem="5Rt-pH-Arc" firstAttribute="leading" secondItem="zVz-Sk-nVh" secondAttribute="trailing" constant="1" id="47w-yP-Kt5"/>
                                     <constraint firstItem="5Rt-pH-Arc" firstAttribute="bottom" secondItem="Fjt-Ep-3Ks" secondAttribute="bottomMargin" id="FDw-Pw-4bH"/>
-                                    <constraint firstItem="zVz-Sk-nVh" firstAttribute="top" secondItem="Fjt-Ep-3Ks" secondAttribute="top" constant="16" id="Hyd-hj-iU3"/>
+                                    <constraint firstItem="zVz-Sk-nVh" firstAttribute="top" secondItem="Fjt-Ep-3Ks" secondAttribute="top" constant="26" id="Hyd-hj-iU3"/>
                                     <constraint firstItem="zVz-Sk-nVh" firstAttribute="leading" secondItem="Fjt-Ep-3Ks" secondAttribute="leading" constant="8" id="KV7-0H-pk0"/>
-                                    <constraint firstAttribute="bottom" secondItem="zVz-Sk-nVh" secondAttribute="bottom" constant="18" id="Nlr-7R-W6w"/>
-                                    <constraint firstItem="5Rt-pH-Arc" firstAttribute="top" secondItem="Fjt-Ep-3Ks" secondAttribute="top" constant="16" id="YJe-M3-eCk"/>
-                                    <constraint firstItem="5Rt-pH-Arc" firstAttribute="top" secondItem="Fjt-Ep-3Ks" secondAttribute="top" constant="16" id="fFZ-GV-BJy"/>
+                                    <constraint firstAttribute="bottom" secondItem="zVz-Sk-nVh" secondAttribute="bottom" constant="8" id="Nlr-7R-W6w"/>
+                                    <constraint firstItem="5Rt-pH-Arc" firstAttribute="top" secondItem="Fjt-Ep-3Ks" secondAttribute="top" constant="20" id="YJe-M3-eCk"/>
+                                    <constraint firstItem="5Rt-pH-Arc" firstAttribute="top" secondItem="Fjt-Ep-3Ks" secondAttribute="top" constant="20" id="fFZ-GV-BJy"/>
                                     <constraint firstAttribute="trailing" secondItem="5Rt-pH-Arc" secondAttribute="trailing" constant="50" id="gzw-xQ-ONb"/>
                                     <constraint firstItem="5Rt-pH-Arc" firstAttribute="centerX" secondItem="Fjt-Ep-3Ks" secondAttribute="centerX" id="jIR-L3-McR"/>
                                     <constraint firstItem="5Rt-pH-Arc" firstAttribute="leading" secondItem="Fjt-Ep-3Ks" secondAttribute="leading" constant="50" id="x1u-V7-D3L"/>
@@ -1088,11 +1071,12 @@ Failure to comply with these rules will result in being removed or banned from t
                     <connections>
                         <outlet property="userImage" destination="Tu8-34-2Kx" id="Rz0-2J-VPN"/>
                         <outlet property="usernameLabel" destination="5Rt-pH-Arc" id="kz0-1c-Tx5"/>
+                        <segue destination="oFx-xv-9Fr" kind="show" identifier="feedFromProfile" id="Jpd-lp-gJ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2LT-RP-ACQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1036" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1369" y="134"/>
         </scene>
     </scenes>
     <resources>
@@ -1558,8 +1542,8 @@ AEEAAAAAAAAAAAAAAAAAAGe8A
         <image name="sign-out" width="92" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="99V-SZ-RB7"/>
-        <segue reference="GwO-tx-8qE"/>
         <segue reference="DYI-Ll-yKl"/>
+        <segue reference="jm6-bV-Kyi"/>
+        <segue reference="99V-SZ-RB7"/>
     </inferredMetricsTieBreakers>
 </document>

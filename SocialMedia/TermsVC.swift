@@ -22,7 +22,7 @@ class TermsVC: UIViewController {
     }
     
     @IBAction func goToLogin(_ sender: Any) {
-        performSegue(withIdentifier: "loginFromTerms", sender: nil)
+        performSegue(withIdentifier: "usernameFromTerms", sender: nil)
     }
 
     /*

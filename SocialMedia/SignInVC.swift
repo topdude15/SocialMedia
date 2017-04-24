@@ -29,70 +29,7 @@ class SignInVC: UIViewController {
             performSegue(withIdentifier: "goToFeed", sender: nil)
         }
     }
-//    @IBAction func facebookBtnTapped(_ sender: Any) {
-//        
-//        let facebookLogin = FBSDKLoginManager()
-//        
-//        facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
-//            UserName.sharedInstance.email = self.emailField.text
-//            UserName.sharedInstance.password = self.pwdField.text
-//            if error != nil {
-//                print("Unable to authenticate with Facebook -\(String(describing: error))")
-//                let message = "Verify your Facebook credentials are correct and try again"
-//                let alertController = UIAlertController(
-//                    title: "Unable to log in with Facebook", // This gets overridden below.
-//                    message: message,
-//                    preferredStyle: .alert
-//                )
-//                let okAction = UIAlertAction(title: "OK", style: .cancel) { _ -> Void in
-//                }
-//                alertController.addAction(okAction)
-//                self.present(alertController, animated: true)
-//            } else if result?.isCancelled == true {
-//                print("User cancelled Facebook authentication")
-//                let message = "Please allow Streak to use your Facebook credentials and try again"
-//                let alertController = UIAlertController(
-//                    title: "Facebook login cancelled", // This gets overridden below.
-//                    message: message,
-//                    preferredStyle: .alert
-//                )
-//                let okAction = UIAlertAction(title: "OK", style: .cancel) { _ -> Void in
-//                }
-//                alertController.addAction(okAction)
-//                self.present(alertController, animated: true)
-//            } else {
-//                FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-//                    if error != nil {
-//                        print("TREVOR: Unable to authenticate email user with Firebase")
-//                        let message = "Verify your e-mail and password are correct and try again"
-//                        let alertController = UIAlertController(
-//                            title: "Unable to log in", // This gets overridden below.
-//                            message: message,
-//                            preferredStyle: .alert
-//                        )
-//                        let okAction = UIAlertAction(title: "OK", style: .cancel) { _ -> Void in
-//                        }
-//                        alertController.addAction(okAction)
-//                        self.present(alertController, animated: true)
-//                    } else {
-//                        print("TREVOR: Successfully authenticated email user with Firebase")
-//                        if let user = user {
-//                            let userData = ["provider": user.providerID]
-//                            print("TREVOR: \(userData)")
-//                            DataService.ds.createFirebaseDBUser(uid: user.uid, userData: userData)
-//
-//                            print("TREVOR: Still here!")
-//                            self.performSegue(withIdentifier: "goToUsername", sender: nil)
-//                            //self.completeSignIn(id: user.uid, userData: userData)
-//                            
-//                        }
-//                    }
-//                })
-//            }
-//            
-//        }
-//        
-//    }
+
     
     //Keyboard hider
     @IBAction func resignKeyboard(sender: AnyObject) {
@@ -171,16 +108,13 @@ class SignInVC: UIViewController {
                                 
                                 //Update the values for the email and password in their respective classes
                                 print("TREVOR: Still here!")
-                                self.performSegue(withIdentifier: "goToUsername", sender: nil)
+                                self.performSegue(withIdentifier: "toTerms", sender: nil)
                             }
                         }
                     })
                 }
             })
         }
-    }
-    @IBAction func toTermsTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toTerms", sender: nil)
     }
     
     //Finishes logging user in and sends them to the feed
