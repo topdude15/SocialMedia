@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import Firebase
+import SwiftKeychainWrapper
 
 class PostCell:  UITableViewCell {
     
@@ -23,7 +24,6 @@ class PostCell:  UITableViewCell {
     var post: Post!
     
     var likesRef: FIRDatabaseReference!
-    
 
     var postID: String = ""
     
@@ -36,6 +36,7 @@ class PostCell:  UITableViewCell {
         tap.numberOfTapsRequired = 1
         likeImage.addGestureRecognizer(tap)
         likeImage.isUserInteractionEnabled = true
+        
     }
 
     func configureCell(post: Post, img: UIImage? = nil, profileImg: UIImage? = nil) {
@@ -46,6 +47,7 @@ class PostCell:  UITableViewCell {
         self.likesLabel.text = "\(post.likes)"
         self.usernameLabe.text = post.postedBy
         userProfileUid.sharedInstance.profileUid = post.posterUid
+        postId.sharedInstance.postID = post.postKey
         
         if img != nil {
             self.postImg.image = img
@@ -106,4 +108,6 @@ class PostCell:  UITableViewCell {
             }
         })
     }
+
+
 }

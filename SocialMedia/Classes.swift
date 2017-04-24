@@ -22,4 +22,10 @@ class userProfileUid {
     
     var profileUid: String!
 }
+class postId {
+    static var sharedInstance = postId()
+    private init() { }
+    
+    var postID: String!
+}
 let defaults = UserDefaults.standard

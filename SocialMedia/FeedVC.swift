@@ -24,7 +24,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
-    var postKey = "key"
     
     @IBAction func getUid(_ sender: Any) {
         let user = DataService.ds.REF_USER_CURRENT
@@ -87,8 +86,6 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
-        
-        postKey = post.postKey
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as? PostCell {
             
@@ -247,24 +244,25 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     }
                 })
         }
-    
     func postSettings() {
-        
         let alert = UIAlertController(title: "Post Settings", message: "", preferredStyle: .alert)
         let action1 = UIAlertAction(title: "Report post", style: .default, handler: { (action) -> Void in
             self.reportPost()
         })
+        let action2 = UIAlertAction(title: "Block post", style: .default, handler: { (action) -> Void in
+           self.reportPost()
+        })
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
         alert.addAction(action1)
+        alert.addAction(action2)
         alert.addAction(cancel)
         self.present(alert, animated: true)
         self.tableView.reloadData()
     }
     
-
     func reportPost() {
-        print("TREVOR: \(self.postKey)")
-        FIRDatabase.database().reference().child("posts").child(self.postKey).observeSingleEvent(of: .value, with: { (snapshot) in
+        let postKey = postId.sharedInstance.postID
+        FIRDatabase.database().reference().child("posts").child(postKey!).observeSingleEvent(of: .value, with: { (snapshot) in
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let caption = dictionary["caption"]
                 let imageUrl = dictionary["imageUrl"]
@@ -283,15 +281,18 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                 ]
                 
                 
-                let firebasePost = FIRDatabase.database().reference().child("reportedPosts").child(self.postKey)
+                let firebasePost = FIRDatabase.database().reference().child("reportedPosts").child(postKey!)
                 firebasePost.setValue(post)
                 
-                let originalPost = FIRDatabase.database().reference().child("posts").child(self.postKey)
+                let originalPost = FIRDatabase.database().reference().child("posts").child(postKey!)
                 originalPost.removeValue()
                 
                 self.tableView.reloadData()
             }
         })
+    }
+    func blockPost() {
+        
     }
 
 }

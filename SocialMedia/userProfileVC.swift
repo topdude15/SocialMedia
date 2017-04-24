@@ -14,8 +14,14 @@ class userProfileVC: UIViewController {
 
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var userImage: CircleView!
+    @IBOutlet weak var followButton: UIButton!
     
     var followRef: FIRDatabaseReference!
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +54,20 @@ class userProfileVC: UIViewController {
         performSegue(withIdentifier: "feedFromProfile", sender: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    @IBAction func followUser(_ sender: Any) {
+//        let usernameRef = DataService.ds.REF_USERNAME_VALUE.queryOrdered(byChild: usernameBoxValue!)
+//        DataService.ds.REF_USERNAME_VALUE.observeSingleEvent(of: .value, with: { (snapshot) in
+//            if snapshot.hasChild(usernameBoxValue!) {
+//                let message = "Please enter an unique username to register"
+//                
+//        let uid = FIRAuth.auth()?.currentUser
+//        FIRDatabase.database().reference().child("users").child(uid!).child("following").observeSingleEvent(of: .value) { (snapshot) in
+//            if snapshot.hasChild(userProfileUid.sharedInstance.profileUid) {
+//                print("Following user")
+//            } else {
+//                print("Not following user")
+//            }
+//        }
+//    }
+}
 }
