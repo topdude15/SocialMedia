@@ -55,18 +55,33 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             
             if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshot {
-                    print("SNAP: \(snap)")
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
                         let key = snap.key
-                        let post = Post(postKey: key, postData: postDict)
-                        self.posts.append(post)
-                    }
-                    
+                        DataService.ds.REF_POSTS.child(key).observeSingleEvent(of: .value, with: { (snapshot) in
+                            if let dictionary = snapshot.value as? [String: AnyObject] {
+                                let posterId = dictionary["posterUid"]
+                                DataService.ds.REF_USER_CURRENT.child("blockedUsers").observeSingleEvent(of: .value, with: { (snapshot) in
+                                    if snapshot.hasChild(posterId as! String) {
+                                        print("Post has been blocked!")
+                                    } else {
+                                        print("Post has not been blocked!")
+                                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                                            let key = snap.key
+                                            let post = Post(postKey: key, postData: postDict)
+                                            self.posts.append(post)
+                                        }
+                                    }
+                                    print("I love memes")
+                                    self.posts.reverse()
+                                    self.tableView.reloadData()
+                                })
+                            }
+                        })
+
                 }
+
             }
-            self.posts.reverse()
-            self.tableView.reloadData()
         })
+
     }
     
     @IBAction func resignKeyboard(sender: AnyObject) {
@@ -233,7 +248,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     
                     self.captionField.text = ""
                     self.imageSelected = false
-                    self.imageAdd.image = UIImage(named: "add-image")
+                    self.imageAdd.image = UIImage(named: "add-image-1")
                     
                     let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
                     print("THIS IS COOL \(firebasePost)")
@@ -249,12 +264,9 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         let action1 = UIAlertAction(title: "Report post", style: .default, handler: { (action) -> Void in
             self.reportPost()
         })
-        let action2 = UIAlertAction(title: "Block post", style: .default, handler: { (action) -> Void in
-           self.reportPost()
-        })
+
         let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: { (action) -> Void in })
         alert.addAction(action1)
-        alert.addAction(action2)
         alert.addAction(cancel)
         self.present(alert, animated: true)
         self.tableView.reloadData()
@@ -291,8 +303,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
             }
         })
     }
-    func blockPost() {
-        
-    }
 
+    @IBAction func searchTapped(_ sender: Any) {
+        performSegue(withIdentifier: "searchFromFeed", sender: nil)
+    }
 }

@@ -67,6 +67,9 @@ class SettingsVC: UIViewController {
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "loggedOut", sender: nil)
     }
+    @IBAction func goToBannedUsers(_ sender: Any) {
+        performSegue(withIdentifier: "toBannedUsers", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
