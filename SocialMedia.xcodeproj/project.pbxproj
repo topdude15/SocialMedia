@@ -200,7 +200,6 @@
 		CF19D0FD1E75BB7600003FB2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CFCA3FF81E82EE9600EB0CBD /* usernameVC.swift */,
 				CF41E57B1E7432DB0045CEB6 /* SignInVC.swift */,
 				CF2F1F051E780278006EE222 /* FeedVC.swift */,
 				CF3AA37F1E97EEF50014D220 /* addUserImageVC.swift */,
@@ -209,6 +208,7 @@
 				CF269E581EA91C030012B6D5 /* ChangeProfileImage.swift */,
 				CF5531401EA99B3800768296 /* TermsVC.swift */,
 				CF6817B71EAF60D600D560C4 /* BannedUserVC.swift */,
+				CFCA3FF81E82EE9600EB0CBD /* usernameVC.swift */,
 				CF3632FD1EAFB4CD00FC17BD /* SearchVC.swift */,
 			);
 			name = Controller;

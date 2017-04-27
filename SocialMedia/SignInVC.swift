@@ -26,9 +26,11 @@ class SignInVC: UIViewController {
     }
     //Checks if the user has already logged in and will go straight to feed if they have
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+        let uid = FIRAuth.auth()?.currentUser
+        if uid != nil {
             performSegue(withIdentifier: "goToFeed", sender: nil)
         }
+
     }
 
     

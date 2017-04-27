@@ -22,18 +22,17 @@ class SearchPost {
     var userImage: String {
         return _userImage
     }
-    var userId: String {
-        return _userId
+    init(profileImg: String, username: String, userId: String) {
+        self._username = username
+        self._userImage = profileImg
     }
     
     init(postData: Dictionary<String, AnyObject>) {
-        self._userId = userId
         if let username = postData["username"] as? String {
             self._username = username
         }
         if let userImage = postData["userImage"] as? String {
             self._userImage = userImage
         }
-        _postRef = DataService.ds.REF_USERS.child(_userId)
     }
 }

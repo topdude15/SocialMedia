@@ -16,6 +16,8 @@ class SearchCell: UITableViewCell {
     @IBOutlet weak var profileImg: CircleView!
     @IBOutlet weak var usernameLabel: UILabel!
     
+
+    
     var post: SearchPost!
     
     override func awakeFromNib() {
@@ -37,6 +39,7 @@ class SearchCell: UITableViewCell {
                     if let imgData = data {
                         if let img = UIImage(data: imgData) {
                             self.profileImg.image = img
+                            SearchVC.imageCache.setObject(img, forKey: post.userImage as NSString)
                         }
                     }
                 }
